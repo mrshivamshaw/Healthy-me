@@ -8,3 +8,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.active{
+  border-bottom: 2.38px solid #125FBF;
+  font-weight: 700;
+  transition: all ;
+}
