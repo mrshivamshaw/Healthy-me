@@ -1,6 +1,6 @@
 import React from 'react'
 
-function HowToUse() {
+const HowToUse = () => {
   return (
     <div>HowToUse</div>
   )

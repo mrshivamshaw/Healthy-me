@@ -1,8 +1,10 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
-import logo from '../../assets/healthyme.png'
+import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
+import logo from "../../assets/healthyme.png";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 const Navbar = () => {
+  const [navActive,SetNavActive] = useState(false)
   return (
     <div className='h-[10vh] max-w-[100vw] flex justify-between items-center px-[7vw] overflow-x-hidden'>
         <div className='flex justify-center items-baseline gap-[10px]'>
@@ -20,7 +22,7 @@ const Navbar = () => {
             </ul>
         </div>
     </div>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

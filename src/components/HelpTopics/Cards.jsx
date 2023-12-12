@@ -1,9 +1,23 @@
-import React from 'react'
+import React from "react";
+import Card from "./Card";
 
 const Cards = () => {
   return (
-    <div>Cards</div>
-  )
-}
 
-export default Cards
+      <div className="flex gap-5 w-full overflow-x-scroll ">
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+      </div>
+  );
+};
+
+export default Cards;
