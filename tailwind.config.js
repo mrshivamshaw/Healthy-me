@@ -5,8 +5,15 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'akshar': ['Akshar', 'sans-serif'],
+        'kalnia': ['Kalnia', 'serif'],
+        'satoshi':['Satoshi', 'sans-serif']
+      },
+    },
   },
+  
   plugins: [],
 }
 
