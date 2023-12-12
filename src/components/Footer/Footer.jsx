@@ -14,8 +14,8 @@ import {
 function Footer() {
   return (
     <div className="w-screen bg-white rounded-t-[4vw] pt-[4.5vw] px-[3vw] font-[400] text-[21.59px] overflow-x-hidden">
-      <div className="w-[85vw] mx-auto flex text-[#4F555A] justify-between items-start pb-[3vw]">
-        <div className="flex flex-col justify-start items-start w-[300px] gap-6">
+      <div className="w-[85vw] mx-auto flex flex-wrap text-[#4F555A] justify-start gap-[50px] md:gap-[50px] lg:gap-[80px] xl:gap-[80px] items-start pb-[3vw] overflow-x-hidden">
+        <div className="flex flex-col justify-start items-start w-[261px] gap-6">
           <img
             src="https://res.cloudinary.com/dnrwlbbbj/image/upload/v1702320663/check/Group_1_d0tqtt.png"
             alt="logo"
@@ -35,7 +35,7 @@ function Footer() {
           </div>
         </div>
         <div class>
-          <div className="text-[#1678F2] font-[700] pb-[1.5vw]">Product</div>
+          <div className="text-[#1678F2] font-[700] pb-[1.5vw] w-[153px]">Product</div>
           <div>
             <div> Features</div>
             <div>Pricing</div>
@@ -45,7 +45,7 @@ function Footer() {
           </div>
         </div>
         <div>
-          <div className="text-[#1678F2] font-[700] pb-[1.5vw]">Company</div>
+          <div className="text-[#1678F2] font-[700] pb-[1.5vw] w-[153px]">Company</div>
           <div>
             <div>About</div>
             <div>Contact us</div>
@@ -55,7 +55,7 @@ function Footer() {
           </div>
         </div>
         <div>
-          <div className="text-[#1678F2] font-[700] pb-[1.5vw]">Support</div>
+          <div className="text-[#1678F2] font-[700] pb-[1.5vw] w-[153px]">Support</div>
           <div>
             <div>Getting started</div>
             <div>Help center</div>
@@ -64,7 +64,7 @@ function Footer() {
             <div>Chat support</div>
           </div>
         </div>
-        <div className="flex flex-col justify-center items-start">
+        <div className="flex flex-col justify-center items-start w-[153px]">
           <div className="text-[#1678F2] font-[700] pb-[1.5vw]">Contact us</div>
           <div className="flex flex-col justify-center items-start gap-2">
 
@@ -91,7 +91,7 @@ function Footer() {
       </div>
       <div className="w-[85vw] mx-auto flex justify-between text-[#6F6C90] border-t-[1.2px] border-[#D9DBE9] p-3">
         <div>Copyright © 2022</div>
-        <div className=" self-end text-right">
+        <div className=" self-end text-right ">
           All Rights Reserved |{" "}
           <span className="text-[#4A3AFF] underline">Terms and Conditions</span>{" "}
           | <span className="text-[#4A3AFF] underline">Privacy Policy</span>
