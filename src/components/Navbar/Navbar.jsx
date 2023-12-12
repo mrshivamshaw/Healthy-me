@@ -2,11 +2,12 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../../assets/healthyme.png";
 import { FaBars, FaTimes } from "react-icons/fa";
+import MobileSize from "./MobileSize";
 
 const Navbar = () => {
   const [navActive,SetNavActive] = useState(false)
   return (
-    <div className="z-10 relative h-[10vh] max-w-[100vw] flex justify-between items-center px-[7vw] overflow-x-hidden mb-[10vh] md:mb-[10vh] lg:mb-[10vh] xl:mb-0">
+    <div className="z-40 fixed top-0 left-0 h-[10vh] w-[100vw] bg-white flex justify-between shadow-md items-center px-[7vw] overflow-x-hidden mb-[10vh] md:mb-[10vh] lg:mb-[10vh] xl:mb-0">
       <div className="flex justify-center items-baseline gap-[10px]">
         <img
           src="https://res.cloudinary.com/dnrwlbbbj/image/upload/v1702320663/check/Group_1_d0tqtt.png"
@@ -48,9 +49,9 @@ const Navbar = () => {
         </ul>
       </div>
       {
-        navActive ? <FaTimes onClick={()=>SetNavActive(false)} className="block md:block lg:hidden xl:hidden"/>:<FaBars onClick={()=>SetNavActive(true)} className="block md:block lg:hidden xl:hidden"/>
+        navActive ? <FaTimes onClick={()=>SetNavActive(false)} className="block md:block lg:hidden xl:hidden text-lg"/>:<FaBars onClick={()=>SetNavActive(true)} className="block md:block lg:hidden xl:hidden text-lg"/>
       }
-      
+      <MobileSize navActive={ navActive}/>
     </div>
   );
 };
