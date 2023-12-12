@@ -13,26 +13,11 @@ import {
 
 function Footer() {
   return (
-    <div className="w-screen bg-white rounded-t-[4vw] pt-[4.5vw] px-[3vw] font-[400] text-[1.3vw] overflow-x-hidden">
-      <div className="w-[85vw] mx-auto flex text-[#4F555A] justify-between items-start pb-[3vw]">
-        <div className="flex flex-col justify-start items-start w-[19.67vw] gap-6">
-          <img
-            src="https://res.cloudinary.com/dnrwlbbbj/image/upload/v1702320663/check/Group_1_d0tqtt.png"
-            alt="logo"
-            className="h-[3vw] w-auto "
-          />
-          <img src={logo} alt="logo" className="h-[2.8vw] w-auto -mt-8" />
-          <p className="text-sm font-medium">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo,
-            commodi?
-          </p>
-          <div className="flex justify-start items-center gap-4 text-[#3A8EF6]">
-            <FaFacebookF />
-            <FaTwitter />
-            <FaInstagram />
-            <FaLinkedin />
-            <FaYoutube />
-          </div>
+    <div className='w-screen bg-white rounded-t-[4vw] pt-[4.5vw] px-[3vw] font-[400] text-[21.59px]'>
+
+    <div className='flex text-[#4F555A] justify-around pb-[3vw] '>
+        <div>
+            Logo
         </div>
         <div class>
           <div className="text-[#1678F2] font-[700] pb-[1.5vw]">Product</div>
@@ -101,4 +86,4 @@ function Footer() {
   );
 }
 
-export default Footer;
+export default Footer
