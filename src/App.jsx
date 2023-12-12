@@ -7,7 +7,7 @@ import LogIn from './components/Login/LogIn';
 
 function App() {
   return (
-      
+      <div className='bg-[#F3F3FD]'>
         <Routes>
           <Route index path='/' element={<Home/>}/>
           <Route path='/home' element={<Home/>}/>
@@ -15,9 +15,8 @@ function App() {
           <Route path='/howtouse' element={<HowToUse/>}/>
           <Route path ='/login' element={<LogIn/>}/>
         </Routes>
-     
+        </div>
   )
 }
 
 export default App
-
