@@ -12,7 +12,7 @@ const Navbar = () => {
         </div>
         <div className='w-auto items-center'>
             <ul className='flex justify-center items-center gap-[47.95px]'>
-                <li className='text-[#404040] cursor-pointer text-[17.38px] leading-[34.27px] font-[500]'><NavLink to={"/home"}>Home</NavLink></li>
+                <li className='text-[#404040] cursor-pointer text-[17.38px] leading-[34.27px] font-[500]'><NavLink to={"/"}>Home</NavLink></li>
                 <li className='text-[#404040] cursor-pointer text-[17.38px] leading-[34.27px] font-[500]'><NavLink to={"/about"}>About Us</NavLink></li>
                 <li className='text-[#404040] cursor-pointer text-[17.38px] leading-[34.27px] font-[500]'><NavLink to={"/howtouse"}>How to use</NavLink></li>
                 <li className='text-[#404040] cursor-pointer text-[17.38px] leading-[34.27px] font-[500]'><button className="px-4 py-1 text-center text-white rounded-xl text-2xl bg-gradient-to-r from-blue-500 to-purple-500">
