@@ -7,13 +7,13 @@ import bot from "../../assets/Path 168.png";
 
 const HeroSection = () => {
   return (
-    <div className="flex w-[100vw]  h-auto relative ">
-      <div className="w-[85vw] mx-auto flex justify-center items-center mb-16 overflow-x-hidden">
-        {/* <img
+    <div className="flex w-[100vw]  h-auto  mt-[15vh] md:mt-[15vh] lg:mt-[15vh] xl:mt-[10vh]">
+      <div className="w-[85vw] mx-auto flex relative justify-center items-center mb-16 overflow-x-hidden">
+        <img
           src={bgImage}
           alt="bg"
-          className="z-0 absolute -left-2 -top-[10vh] w-full"
-        /> */}
+          className="z-0 absolute -left-2 -top-[10vh] w-full hidden md:hidden lg:block xl:block"
+        />
         <div className="flex flex-col justify-start items-start w-[45vw] z-10 ">
           <div className="flex justify-center items-center rounded-[40px] border-[1px] border-[#B4B4B4] py-2 px-3">
             <p className=" text-xl font-[700] font-satoshi text-[#525252] ">
