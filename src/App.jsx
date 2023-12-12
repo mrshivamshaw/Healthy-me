@@ -10,7 +10,7 @@ import Login from './components/Login/Login'
 
 function App() {
   return (
-    <div className='w-[100vw] h-auto box-border'>
+    <div className='w-[100vw] h-auto box-border bg-[#F3F3FD]'>
       <Navbar />
       <Routes> {/* Use Routes and Route from react-router-dom */}
         <Route path='/' >

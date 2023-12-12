@@ -1,12 +1,34 @@
 import React from 'react'
+import { FaFacebookF } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import { RiInstagramFill } from "react-icons/ri";
+import { FaLinkedinIn } from "react-icons/fa";
+import { FaYoutube } from "react-icons/fa";
+import { MdOutlineEmail } from "react-icons/md";
+
 
 function Footer() {
   return (
-    <div className='w-screen bg-white rounded-t-[4vw] pt-[4.5vw] px-[3vw] font-[400] text-[21.59px]'>
+    <div className='w-screen bg-white rounded-t-[4vw] pt-[4.5vw] px-[3vw] font-[400] text-[1.3vw]'>
 
     <div className='flex text-[#4F555A] justify-around pb-[3vw] '>
-        <div>
-            Logo
+        <div className='h-[20vw] w-[19.67vw]'>
+            <div className='pb-[1.8vw]'>
+            <img src="https://res.cloudinary.com/dnrwlbbbj/image/upload/v1702320663/check/Group_1_d0tqtt.png" alt="logo" className='h-[3vw] w-auto '/>
+            <h1 className="text-transparent text-[2.8vw] leading-[5vw] font-bold bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500">
+      HealthyMe
+    </h1>
+            </div>
+            <div className='pb-[1.8vw]'>
+            Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam
+            </div>
+            <div className='flex gap-[1vw]'>
+            <FaFacebookF  className=' text-[#1678F2]'/>
+            <FaXTwitter className=' text-[#1678F2]'/>
+            <RiInstagramFill className='text-[#1678F2]' />
+            <FaLinkedinIn className='text-[#1678F2]'/>
+            <FaYoutube className='text-[#1678F2]'/>
+            </div>
         </div>
         <div>
             <div className='text-[#1678F2] font-[700] pb-[1.5vw]'>
@@ -44,9 +66,25 @@ function Footer() {
                 <div>Chat support</div>
             </div>
         </div>
-        <div className='text-[#1678F2] font-[700] pb-[1.5vw]'>
+        <div className=''>
+            <div className='text-[#1678F2] font-[700] pb-[1.5vw]'>
             Contact us
+            </div>
+            <div className='flex'>
+            <MdOutlineEmail className='text-[#1678F2] align-middle'/>
+            <div className=''>contact@company.com</div>
+            </div>
+            <div className='flex'>
+            <MdOutlineEmail className='text-[#1678F2] align-middle'/>
+            <div className=''>(414) 687 - 5892</div>
+            </div>
+            <div className='flex'>
+            <MdOutlineEmail className='text-[#1678F2] align-middle'/>
+            <div className=''>794 Mcallister St<br />
+San Francisco, 94102m</div>
+            </div>
         </div>
+      
     </div>
     <div className='flex justify-between text-[#6F6C90] border-t-[1.2px] border-[#D9DBE9] p-3'>
         <div>
