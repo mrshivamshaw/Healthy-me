@@ -13,15 +13,15 @@ import {
 
 function Footer() {
   return (
-    <div className="w-screen bg-white rounded-t-[4vw] pt-[4.5vw] px-[3vw] font-[400] text-[21.59px] overflow-x-hidden">
+    <div className="w-screen bg-white rounded-t-[4vw] pt-[4.5vw] px-[3vw] font-[400] text-[1.3vw] overflow-x-hidden">
       <div className="w-[85vw] mx-auto flex text-[#4F555A] justify-between items-start pb-[3vw]">
-        <div className="flex flex-col justify-start items-start w-[300px] gap-6">
+        <div className="flex flex-col justify-start items-start w-[19.67vw] gap-6">
           <img
             src="https://res.cloudinary.com/dnrwlbbbj/image/upload/v1702320663/check/Group_1_d0tqtt.png"
             alt="logo"
-            className="h-[45.21px] w-auto "
+            className="h-[3vw] w-auto "
           />
-          <img src={logo} alt="logo" className="h-[65.21px] w-auto -mt-10" />
+          <img src={logo} alt="logo" className="h-[2.8vw] w-auto -mt-8" />
           <p className="text-sm font-medium">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo,
             commodi?
