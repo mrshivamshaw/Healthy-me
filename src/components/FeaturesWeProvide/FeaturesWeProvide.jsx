@@ -3,7 +3,7 @@ import React from 'react'
 function FeaturesWeProvide() {
   return (
     <div className='w-[85vw] mx-auto '>
-        <div className='text-[1.5vw] font-[700] tracking-wider bg-gradient-to-tr from-[#3A8EF6] to-[#6F3AFA] inline-block text-transparent bg-clip-text'>
+        <div className='text-[1.4vw] font-[900] font-satoshi tracking-widest bg-gradient-to-tr from-[#3A8EF6] to-[#6F3AFA] inline-block text-transparent bg-clip-text pb-5'>
         FEATURES WE PROVIDE
         </div>
         <div className='flex'>
@@ -20,7 +20,7 @@ function FeaturesWeProvide() {
         <div className='grid grid-cols-3 grid-rows-2 gap-4'>
             <div className=' col-start-1 row-start-1'>
                 <div>
-                    <img src="" alt="" />
+                    <img className='' src="src/assets/diet 1.png" alt="" />
                 </div>
                 <div className='text-[1.6vw]'>
                 Food Recomendation
@@ -31,7 +31,7 @@ function FeaturesWeProvide() {
             </div>
             <div className=' col-start-2 row-start-2'>
                 <div>
-                    <img src="" alt="" />
+                    <img className='' src="src/assets/chatbot 1.png" alt="" />
                 </div>
                 <div className='text-[1.6vw]'>
                 Interactive Chatbot                </div>
@@ -40,7 +40,7 @@ function FeaturesWeProvide() {
             </div>
             <div className=' col-start-3 row-start-1'>
                 <div>
-                    <img src="" alt="" />
+                    <img src="src/assets/stats-2 1.png" alt="" />
                 </div>
                 <div className='text-[1.6vw]'>
                 Doctor’s Recommendations                </div>

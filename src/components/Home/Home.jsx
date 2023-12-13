@@ -4,6 +4,7 @@ import HeroSection from '../HeroSection/HeroSection'
 import HelpTopics from '../HelpTopics/HelpTopics'
 import Footer from '../Footer/Footer'
 import FeaturesWeProvide from '../FeaturesWeProvide/FeaturesWeProvide'
+import AboutForHome from '../About/AboutForHome'
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
         <HeroSection/>
         <FeaturesWeProvide />
         <HelpTopics />
+        <AboutForHome />
         <Footer/>
     </div>
 
