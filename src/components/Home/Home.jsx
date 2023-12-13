@@ -7,11 +7,11 @@ import FeaturesWeProvide from '../FeaturesWeProvide/FeaturesWeProvide'
 
 const Home = () => {
   return (
-    <div div className='w-[100vw] relative h-auto box-border overflow-x-hidden bg-white'>
+    <div className='relative h-auto box-border'>
         <Navbar/>
         <HeroSection/>
         <FeaturesWeProvide />
-        <HelpTopics/>
+        <HelpTopics />
         <Footer/>
     </div>
 

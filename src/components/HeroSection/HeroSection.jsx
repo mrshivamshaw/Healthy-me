@@ -7,7 +7,7 @@ import bot from "../../assets/Path 168.png";
 
 const HeroSection = () => {
   return (
-    <div className="flex w-[100vw]  h-auto  mt-[15vh] md:mt-[15vh] lg:mt-[15vh] xl:mt-[10vh] bg-white">
+    <div className="flex w-[100vw]  h-auto  mt-[15vh] md:mt-[15vh] lg:mt-[15vh] xl:mt-[10vh] ">
       <div className="w-[85vw] mx-auto flex relative justify-center items-center mb-16 overflow-x-hidden">
         <img
           src={bgImage}
