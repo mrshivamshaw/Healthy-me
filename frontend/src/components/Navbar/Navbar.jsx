@@ -12,7 +12,7 @@ const Navbar = () => {
         <img
           src="https://res.cloudinary.com/dnrwlbbbj/image/upload/v1702320663/check/Group_1_d0tqtt.png"
           alt="logo"
-          className="h-[45.21px] w-auto "
+          className="h-[45.21px] w-auto mb-2"
         />
         <img src={logo} alt="logo" className="h-[65.21px] w-auto " />
       </div>

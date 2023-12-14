@@ -1,10 +1,11 @@
 import React from 'react'
+import aboutUs from '../../assets/AboutUs.png'
 
 function About() {
   return (
     <div>
       <div>
-        <img src="src/assets/AboutUs.png" alt="" />
+        <img src={aboutUs} alt="aboutUs" />
         <div>
           <div className='text-[1.5vw] font-[700] tracking-wider bg-gradient-to-tr from-[#3A8EF6] to-[#6F3AFA] inline-block text-transparent bg-clip-text'>ABOUT US</div>
           <div className='text-[2vw] font-[500] pb-3'>Our Goal</div>

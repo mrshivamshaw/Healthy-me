@@ -1,4 +1,7 @@
 import React from 'react'
+import diet from '../../assets/diet 1.png'
+import chatbot from '../../assets/chatbot 1.png'
+import stars from '../../assets/stats-2 1.png'
 
 function FeaturesWeProvide() {
   return (
@@ -20,7 +23,7 @@ function FeaturesWeProvide() {
         <div className='grid grid-cols-3 grid-rows-2 gap-4'>
             <div className=' col-start-1 row-start-1'>
                 <div>
-                    <img className='' src="src/assets/diet 1.png" alt="" />
+                    <img className='' src={diet} alt="diet" />
                 </div>
                 <div className='text-[1.6vw]'>
                 Food Recomendation
@@ -31,7 +34,7 @@ function FeaturesWeProvide() {
             </div>
             <div className=' col-start-2 row-start-2'>
                 <div>
-                    <img className='' src="src/assets/chatbot 1.png" alt="" />
+                    <img className='' src={chatbot} alt="chatbot" />
                 </div>
                 <div className='text-[1.6vw]'>
                 Interactive Chatbot                </div>
@@ -40,7 +43,7 @@ function FeaturesWeProvide() {
             </div>
             <div className=' col-start-3 row-start-1'>
                 <div>
-                    <img src="src/assets/stats-2 1.png" alt="" />
+                    <img src={stars} alt="stats" />
                 </div>
                 <div className='text-[1.6vw]'>
                 Doctor’s Recommendations                </div>
