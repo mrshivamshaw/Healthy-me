@@ -1,4 +1,9 @@
 import express from 'express'
 
-const route = express.Router()
+const router = express.Router()
 
+import { signin } from '../controllers/auth.js'
+
+router.post('/signin',signin)
+
+export default router

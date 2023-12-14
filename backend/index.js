@@ -1,16 +1,20 @@
-import express, { json } from "express";
+import express from "express";
 import { config as configDotenv } from "dotenv";
 import dbConnect from "./config/database.js";
-configDotenv()
+import router from "./routes/route.js";
 
-const app = express()
+configDotenv();
 
-const port = process.env.PORT || 4000
+dbConnect();
+const app = express();
+const port = process.env.PORT || 4000;
 
-app.use(express.json())
+app.use(express.json());
+app.use('/api/v1', router);
 
-app.listen(port,()=>console.log("Port started at : ",port))
-dbConnect()
-app.get('/',(req,res)=>{
-    res.send("Helloo jii")
-})
+// Define the '/' route before starting the server
+app.get('/', (req, res) => {
+    res.send("Hello jii");
+});
+
+app.listen(port, () => console.log("Server started at port:", port));

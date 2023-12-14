@@ -17,11 +17,7 @@ const user = new mongoose.Schema({
         required:true
     },
     password:{
-        type:string,
-        required:true
-    },
-    confirmPassword:{
-        type:string,
+        type:String,
         required:true
     },
     contactNumber:{
@@ -29,7 +25,7 @@ const user = new mongoose.Schema({
         required:true
     },
     age:{
-        type:Number,
+        type:Number,    
         required:true
     }
 
