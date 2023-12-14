@@ -7,7 +7,7 @@ import bot from "../../assets/Path 168.png";
 
 const HeroSection = () => {
   return (
-    <div className="flex w-[100vw]  h-auto  mt-[15vh] md:mt-[15vh] lg:mt-[15vh] xl:mt-[10vh] bg-white">
+    <div className="flex w-[100vw]  h-auto  mt-[15vh] md:mt-[15vh] lg:mt-[15vh] xl:mt-[10vh] ">
       <div className="w-[85vw] mx-auto flex relative justify-center items-center mb-16 overflow-x-hidden">
         <img
           src={bgImage}
@@ -34,7 +34,7 @@ const HeroSection = () => {
           </p>
           
           <button
-            className="flex mt-20 justify-center items-center gap-5  font-satoshi  text-white px-8 py-3 rounded-xl"
+            className="flex mt-20 justify-center items-center gap-5  font-satoshi text-white px-8 py-3 rounded-xl shadow-sm drop-shadow"
             style={{
               background:
                 "linear-gradient(180deg, rgba(71, 121, 247, 0.85) 0%, rgba(108, 174, 255, 0.85) 99.98%, rgba(140, 9, 244, 0.85) 99.99%)",
