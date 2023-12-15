@@ -2,6 +2,7 @@ import express from "express";
 import { config as configDotenv } from "dotenv";
 import dbConnect from "./config/database.js";
 import router from "./routes/route.js";
+import cors from 'cors'
 
 configDotenv();
 
@@ -10,6 +11,7 @@ const app = express();
 const port = process.env.PORT || 4000;
 
 app.use(express.json());
+app.use(cors())
 app.use('/api/v1', router);
 
 // Define the '/' route before starting the server
