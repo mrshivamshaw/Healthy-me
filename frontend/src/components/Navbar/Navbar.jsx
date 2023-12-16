@@ -11,7 +11,7 @@ const Navbar = () => {
   const [navActive,SetNavActive] = useState(false)
   useEffect(()=>{
     checkAuth();
-  },[isLoggedIn,checkAuth()])
+  },[isLoggedIn])
   const logOutHandler = () =>{
     localStorage.removeItem("token")
     setIsLoggedIn(false)
