@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from 'react-router-dom'
 import heroImage from "../../assets/kisspng-physician-diabetes-mellitus-computer-disease-preve-doctor-and-computer-5a99b82dcadc58_1-removebg-preview.png";
 import bgImage from "../../assets/Background.png";
 import heart from "../../assets/Group 20.png";
@@ -32,7 +33,7 @@ const HeroSection = () => {
             Using your BMI index we calculate whether the dish is suitable for
             you.
           </p>
-          
+          <Link to = "/chatbot">
           <button
             className="flex mt-20 justify-center items-center gap-5  font-satoshi text-white px-8 py-3 rounded-xl shadow-sm drop-shadow"
             style={{
@@ -44,6 +45,7 @@ const HeroSection = () => {
             <p className="text-[30px] font-[600]"> Talk to Me! </p>
             <img src={tele} alt="tele" className="h-[40px]" />
           </button>
+          </Link>
         </div>
         <div className="z-10">
           <img src={heroImage} alt="heroImage" className="w-[40vw] h-auto" />
