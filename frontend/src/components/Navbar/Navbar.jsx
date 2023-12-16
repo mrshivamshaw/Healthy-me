@@ -43,8 +43,8 @@ const Navbar = () => {
               How to use
             </li>
           </NavLink>
-          <NavLink to={"/login"}>
-            {!isLoggedIn && <li className="text-[#404040] cursor-pointer text-[17.38px] leading-[34.27px] font-[500]">
+          {!isLoggedIn && <NavLink to={"/login"}>
+             <li className="text-[#404040] cursor-pointer text-[17.38px] leading-[34.27px] font-[500]">
               <button
                 className="px-4 py-1 text-center text-white rounded-xl text-2xl"
                 style={{
@@ -54,8 +54,8 @@ const Navbar = () => {
               >
                 Log In
               </button>
-            </li>}
-          </NavLink>
+            </li>
+          </NavLink>}
           {isLoggedIn && <li className="text-[#404040] cursor-pointer text-[17.38px] leading-[34.27px] font-[500]">
               <button 
                 onClick={logOutHandler}
