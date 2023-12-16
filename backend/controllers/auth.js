@@ -89,7 +89,7 @@ export const login = async(req,res) =>{
             id:userData._id
         }
         if(await bcrypt.compare(password,userData.password)){
-            const token = jwt.sign(payload,process.env.SECRET_KEY,{expiresIn:"2h"})
+            const token = jwt.sign(payload,process.env.SECRET_KEY,{expiresIn:"1m"})
             userData = userData.toObject()
             userData.token = token
             userData.password = undefined

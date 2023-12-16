@@ -1,11 +1,21 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../../assets/healthyme.png";
 import { FaBars, FaTimes } from "react-icons/fa";
 import MobileSize from "./MobileSize";
+import { useAuth } from "../../contextApi/ContextApi";
 
 const Navbar = () => {
+
+  const {isLoggedIn,setIsLoggedIn,checkAuth} = useAuth()
   const [navActive,SetNavActive] = useState(false)
+  useEffect(()=>{
+    checkAuth();
+  },[isLoggedIn,checkAuth()])
+  const logOutHandler = () =>{
+    localStorage.removeItem("token")
+    setIsLoggedIn(false)
+  }
   return (
     <div className="z-40 fixed top-0 left-0 h-[10vh] w-[100vw] bg-white flex justify-between shadow-md items-center px-[7vw] overflow-x-hidden mb-[10vh] md:mb-[10vh] lg:mb-[10vh] xl:mb-0">
       <div className="flex justify-center items-baseline gap-[10px]">
@@ -34,7 +44,7 @@ const Navbar = () => {
             </li>
           </NavLink>
           <NavLink to={"/login"}>
-            <li className="text-[#404040] cursor-pointer text-[17.38px] leading-[34.27px] font-[500]">
+            {!isLoggedIn && <li className="text-[#404040] cursor-pointer text-[17.38px] leading-[34.27px] font-[500]">
               <button
                 className="px-4 py-1 text-center text-white rounded-xl text-2xl"
                 style={{
@@ -44,8 +54,20 @@ const Navbar = () => {
               >
                 Log In
               </button>
-            </li>
+            </li>}
           </NavLink>
+          {isLoggedIn && <li className="text-[#404040] cursor-pointer text-[17.38px] leading-[34.27px] font-[500]">
+              <button 
+                onClick={logOutHandler}
+                className="px-4 py-1 text-center text-white rounded-xl text-2xl"
+                style={{
+                  background:
+                    "linear-gradient(96.14deg, #3A8EF6 -10.84%, #6F3AFA 196.74%, #6F3AFA 196.74%)",
+                }}
+              >
+                Log Out
+              </button>
+            </li>}
         </ul>
       </div>
       {

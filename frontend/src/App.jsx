@@ -6,9 +6,11 @@ import HowToUse from './components/HowToUse/HowToUse';
 import Login from './components/LogInSite/Login';
 import SignIn from './components/SignIn/SignIn';
 import { ToastContainer } from 'react-toastify';
+import { AuthProvider } from './contextApi/ContextApi';
 
 function App() {
   return (
+    <AuthProvider>
       <div className='bg-[#F3F3FD]'>
         <Routes>
           <Route path='/' >
@@ -22,6 +24,7 @@ function App() {
         </Routes>
         <ToastContainer/>
         </div>
+    </AuthProvider>
   )
 }
 

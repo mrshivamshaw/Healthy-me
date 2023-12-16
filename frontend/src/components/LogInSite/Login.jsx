@@ -6,8 +6,11 @@ import { useState } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useAuth } from "../../contextApi/ContextApi";
+
 
 const Login = () => {
+  const {storeInLs,getFromLs} = useAuth();
   const navigate = useNavigate();
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
@@ -24,10 +27,14 @@ const Login = () => {
         .then((res) => {
           if (res.data.success === true) {
             navigate("/home");
-            toast(res.data.message);
+            toast.success(res.data.message);
+            console.log(res.data.token);
+            storeInLs(res.data.token)
+            getFromLs()
+
           } else {
             console.log(res.data.message);
-            toast(res.data.message);
+            toast.error(res.data.message);
           }
         });
     } catch (error) {

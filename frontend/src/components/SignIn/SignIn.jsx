@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import cardiologist from "../../assets/Cardiologist.gif";
 import { Link, useNavigate } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import { toast } from "react-toastify";
 import axios from "axios";
+import { useAuth } from "../../contextApi/ContextApi";
 
 const SignIn = () => {
+  const storeInLs = useAuth()
   const navigate = useNavigate()
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -33,7 +35,7 @@ const SignIn = () => {
           toast(res.data.message);
         }else {
           console.log(res.data.message);
-          toast(res.data.message);
+          toast.error(res.data.message);
         }
       })
     } catch (error) {
