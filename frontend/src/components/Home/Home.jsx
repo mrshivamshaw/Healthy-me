@@ -9,7 +9,7 @@ import AboutForHome from '../About/AboutForHome'
 const Home = () => {
   return (
     <div className='relative h-auto box-border max-w-[100vw] overflow-x-hidden'>
-        <Navbar/>
+
         <HeroSection/>
         <FeaturesWeProvide />
         <HelpTopics />

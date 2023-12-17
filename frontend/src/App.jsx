@@ -7,11 +7,14 @@ import Login from './components/LogInSite/Login';
 import SignIn from './components/SignIn/SignIn';
 import { ToastContainer } from 'react-toastify';
 import { AuthProvider } from './contextApi/ContextApi';
+import Navbar from './components/Navbar/Navbar';
+import MainPage from './components/Chatbot/MainPage';
 
 function App() {
   return (
     <AuthProvider>
       <div className='bg-[#F3F3FD]'>
+        <Navbar />
         <Routes>
           <Route path='/' >
             <Route path='' element = {<Home />} />
@@ -20,6 +23,7 @@ function App() {
             <Route path='howtouse' element={<HowToUse/>}/>
             <Route path ='login' element={<Login/>}/>
             <Route path ='signin' element={<SignIn/>}/>
+            <Route path='chatbot' element={<MainPage />} />
         </Route>
         </Routes>
         <ToastContainer/>
