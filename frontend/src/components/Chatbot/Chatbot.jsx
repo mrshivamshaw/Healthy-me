@@ -1,6 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { IoMdAttach } from "react-icons/io";
+import { MdOutlineEmojiEmotions } from "react-icons/md";
+import { BsFillSendFill } from "react-icons/bs";
+
 
 function Chatbot() {
+
+    const [input , setInput] = useState('')
+
   return (
     <div>
         <div className='h-[75vh] w-auto bg-[#F1F1FF] shadow-xl rounded-2xl drop-shadow-lg'>
@@ -17,8 +24,15 @@ function Chatbot() {
             <div className=''>
                 
             </div>
-            <div className='fixed bottom-0 h-10 w-[70%] rounded-xl m-10 bg-white'>
-                <input className='w-[70%] rounded-3xl' type="text" />
+            <div className='fixed bottom-0 h-12 w-[80%] rounded-xl m-10 p-3 bg-white text-xl'>
+                <input className='w-[70%] h-full outline-none rounded-3xl' type="text"
+                 value={input}
+                 onChange={(e) => setInput(e.target.value)} 
+                 placeholder='type reply . . . . .'
+                />
+                <button className=' text-[#A3A3A3] px-2 scale-105'><IoMdAttach /></button>
+                <button className='text-[#A3A3A3] px-2 scale-105'><MdOutlineEmojiEmotions /></button>
+                <button className='text-[#5D6EF7] px-5 scale-150 drop-shadow'><BsFillSendFill /></button>
             </div>
         </div>
     </div>
