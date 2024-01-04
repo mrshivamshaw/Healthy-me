@@ -9,6 +9,7 @@ import { ToastContainer } from 'react-toastify';
 import { AuthProvider } from './contextApi/ContextApi';
 import Navbar from './components/Navbar/Navbar';
 import MainPage from './components/Chatbot/MainPage';
+import ChallangesOverview from './components/Challenges/MyChallange/ChallangesOverview';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Route path ='login' element={<Login/>}/>
             <Route path ='signin' element={<SignIn/>}/>
             <Route path='chatbot' element={<MainPage />} />
+            <Route path='mychallanges' element={<ChallangesOverview />} />
         </Route>
         </Routes>
         <ToastContainer/>
