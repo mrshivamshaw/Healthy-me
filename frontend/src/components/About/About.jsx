@@ -3,7 +3,7 @@ import aboutUs from '../../assets/AboutUs.png'
 
 function About() {
   return (
-    <div className="w-[85vw] mx-auto mb-10">
+    <div className="w-[85vw] mx-auto mb-10  mt-[10vh]">
       <div className="flex gap-[12vw] justify-center items-center">
         <img className=" drop-shadow-md" src={aboutUs} alt="about us" />
         <div>
