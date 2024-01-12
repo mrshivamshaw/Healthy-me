@@ -9,7 +9,7 @@ import { ToastContainer } from 'react-toastify';
 import { AuthProvider } from './contextApi/ContextApi';
 import Navbar from './components/Navbar/Navbar';
 import MainPage from './components/Chatbot/MainPage';
-import ChallangesOverview from './components/Challenges/MyChallange/ChallangesOverview';
+import ChallangesOverview from './components/Challenges/ChallangesOverview';
 
 function App() {
   return (
