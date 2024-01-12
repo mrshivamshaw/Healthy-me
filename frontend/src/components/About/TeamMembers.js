@@ -1,22 +1,27 @@
+import shivamImg from '../../assets/shivam.jpeg'
+import soumikImg from '../../assets/soumik.jpeg'
+import arnabImg from '../../assets/arnab.jpg'
+import bikashImg from '../../assets/bikash.png'
+
 const teamMembers = [
     {
         id : 1 ,
-        image : "https://w7.pngwing.com/pngs/695/655/png-transparent-head-the-dummy-avatar-man-tie-jacket-user.png" ,
+        image : soumikImg ,
         name : "Soumik",
     },
     {
         id : 2 ,
-        image : "https://img.lovepik.com/element/45005/1653.png_860.png" ,
+        image : shivamImg ,
         name : "Shivam",
     },
     {
         id : 3 ,
-        image : "https://img.lovepik.com/free-png/20210927/lovepik-man-working-with-computer-png-image_401569431_wh1200.png" ,
+        image : arnabImg ,
         name : "Arnab",
     },
     {
         id : 4 ,
-        image : "https://img.lovepik.com/free-png/20210926/lovepik-man-sitting-at-work-in-front-of-computer-png-image_401482908_wh1200.png" ,
+        image : bikashImg ,
         name : "Bikash",
     },
 ]
