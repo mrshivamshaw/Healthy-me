@@ -1,0 +1,7 @@
+.react-calendar__tile {
+    font-size: medium;
+}
+.react-calendar__navigation__label__labelText{
+    font-size: large;
+    font-weight: bold;
+}
