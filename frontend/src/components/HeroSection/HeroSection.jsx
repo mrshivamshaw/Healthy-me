@@ -33,6 +33,7 @@ const HeroSection = () => {
             Using your BMI index we calculate whether the dish is suitable for
             you.
           </p>
+          <div className="flex items-center justify-center gap-4">
           <Link to = "/chatbot">
           <button
             className="flex mt-20 justify-center items-center gap-5  font-satoshi text-white px-8 py-3 rounded-xl shadow-sm drop-shadow"
@@ -41,11 +42,24 @@ const HeroSection = () => {
                 "linear-gradient(180deg, rgba(71, 121, 247, 0.85) 0%, rgba(108, 174, 255, 0.85) 99.98%, rgba(140, 9, 244, 0.85) 99.99%)",
             }}
           >
-            <img src={bot} alt="bot" className="h-[65px]" />
-            <p className="text-[30px] font-[600]"> Talk to Me! </p>
-            <img src={tele} alt="tele" className="h-[40px]" />
+            <img src={bot} alt="bot" className="h-[40px]" />
+            <p className="text-[20px] font-[600]"> Talk to Me! </p>
+            <img src={tele} alt="tele" className="h-[25px]" />
+          </button>
+          </Link><Link to = "/myChallenges">
+          <button
+            className="flex mt-20 justify-center items-center gap-2 font-satoshi text-white px-6 py-3 rounded-xl shadow-sm drop-shadow"
+            style={{
+              background:
+                "linear-gradient(180deg, rgba(71, 121, 247, 0.85) 0%, rgba(108, 174, 255, 0.85) 99.98%, rgba(140, 9, 244, 0.85) 99.99%)",
+            }}
+          >
+            <img src={bot} alt="bot" className="h-[38px]" />
+            <p className="text-[20px] font-[600]">Challenge Yourself !!</p>
+            <img src={tele} alt="tele" className="h-[25px]" />
           </button>
           </Link>
+          </div>
         </div>
         <div className="z-10">
           <img src={heroImage} alt="heroImage" className="w-[40vw] h-auto" />
