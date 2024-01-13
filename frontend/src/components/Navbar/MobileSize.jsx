@@ -23,6 +23,11 @@ const MobileSize = ({ navActive }) => {
                   How to use
                 </li>
               </NavLink>
+              <NavLink to={"/mychallanges"}>
+                <li className="text-[#404040] cursor-pointer text-[17.38px] leading-[34.27px] font-[500]">
+                  Challenges
+                </li>
+              </NavLink>
               <NavLink to={"/login"}>
                 <li className="text-[#404040] cursor-pointer text-[17.38px] leading-[34.27px] font-[500]">
                   <button
