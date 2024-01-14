@@ -42,8 +42,6 @@ function ChallangesOverview() {
 	console.log(date);
 	return (
 		<div className="w-[85vw] mx-auto mt-[15vh] md:mt-[15vh] lg:mt-[15vh] xl:mt-[10vh] h-screen">
-
-
 			<Calander />
 		</div>
 	);

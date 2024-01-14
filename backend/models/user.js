@@ -27,7 +27,12 @@ const user = new mongoose.Schema({
     age:{
         type:Number,    
         required:true
-    }
+    },
+    challenges:[
+        {type:mongoose.Schema.Types.ObjectId,
+        ref:"challenge"}
+    ]
+    
 
 })
 

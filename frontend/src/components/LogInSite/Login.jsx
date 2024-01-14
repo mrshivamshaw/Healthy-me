@@ -29,8 +29,9 @@ const Login = () => {
             navigate("/home");
             toast.success(res.data.message);
             console.log(res.data.token);
+            console.log(res.data.user);
             storeInLs(res.data.token)
-            getFromLs()
+            getFromLs() 
 
           } else {
             console.log(res.data.message);

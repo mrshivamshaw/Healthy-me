@@ -16,16 +16,18 @@ export const AuthProvider = ({children}) =>{
             }
           );
       
-          console.log("grant",response.data.message);
+            console.log("grant",response.data.message);
             console.log(response.data.message);
+
           if (response.data.message !== "Access granted") {
              localStorage.removeItem("token");
             setIsLoggedIn(false); // Update the state when token is removed
+            console.log("not granted");
           }
         } catch (error) {
             localStorage.removeItem("token");
             setIsLoggedIn(false); 
-          console.log(error);
+            console.log("error while login",error);
         }
       };
       

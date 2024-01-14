@@ -103,7 +103,7 @@ export const login = async(req,res) =>{
                 success:true,
                 token:token,
                 message:"user successfully logged in",
-                userData
+                user:userData
             })
         }
 
