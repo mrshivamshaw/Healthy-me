@@ -43,7 +43,7 @@ const Navbar = () => {
               How to use
             </li>
           </NavLink>
-          <NavLink to={"/mychallanges"}>
+          <NavLink to={"/mychallenges"}>
             <li className="text-[#404040] cursor-pointer text-[17.38px] leading-[34.27px] font-[500]">
               Challenges
             </li>
