@@ -17,7 +17,7 @@ const Navbar = () => {
     setIsLoggedIn(false)
   }
   return (
-    <div className="z-40 fixed top-0 left-0 h-[10vh] w-[100vw] bg-white flex justify-between shadow-md items-center px-[7vw] overflow-x-hidden mb-[10vh] md:mb-[10vh] lg:mb-[10vh] xl:mb-0">
+    <div className="z-40 fixed top-0 left-0 h-[10vh] w-[100vw] bg-white flex justify-between shadow-md items-center px-[7vw] overflow-hidden mb-[10vh] md:mb-[10vh] lg:mb-[10vh] xl:mb-0">
       <div className="flex justify-center items-baseline gap-[10px]">
         <img
           src="https://res.cloudinary.com/dnrwlbbbj/image/upload/v1702320663/check/Group_1_d0tqtt.png"

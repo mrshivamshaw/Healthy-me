@@ -3,6 +3,10 @@ import React from "react";
 // import { FaPlus } from "react-icons/fa";
 // import curve from "../../../assets/Curve.png";
 import Calander from "./Calender/Calander";
+import topSvg from '../../assets/Group 29 (1).png'
+import downSvg from '../../assets/Group 27 (1).png'
+import Task from "./Task/Task";
+import Leaderboard from "./Leaderboard";
 
 
 function ChallangesOverview() {
@@ -41,8 +45,20 @@ function ChallangesOverview() {
 	console.log(thisMonth);
 	console.log(date);
 	return (
-		<div className="w-[85vw] mx-auto mt-[15vh] md:mt-[15vh] lg:mt-[15vh] xl:mt-[10vh] h-screen">
-			<Calander />
+		<div className="w-[100vw] mt-[15vh] md:mt-[15vh] lg:mt-[15vh] xl:mt-[10vh] h-[90vh] overflow-hidden relative">
+			<img src={topSvg} alt="top" className="absolute h-[40vh] bottom-0 z-0"/>
+			<img src={downSvg} alt="down" className="absolute right-0 h-[40vh] z-[0]"/>
+			<div className="w-[85vw] mx-auto ">
+				<div className="w-full flex flex-col justify-center items-center py-3 mb-10">
+					<h1 className="text-3xl font-bold">Hey! <span className="font-medium text-[#1678F2]">User</span></h1>
+					<h2 className="text-3xl font-medium">Welcome Back</h2>
+				</div>
+				<div className="flex justify-center items-start gap-10">
+					<Calander />
+					<Task/>
+					<Leaderboard/>
+				</div>
+			</div>
 		</div>
 	);
 }
