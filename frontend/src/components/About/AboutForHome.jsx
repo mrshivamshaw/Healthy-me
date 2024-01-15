@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import teamMembers from "./TeamMembers";
 import aboutUs from "../../assets/AboutUs.png";
 
@@ -37,13 +37,16 @@ function AboutForHome() {
         <div className="flex justify-around">
           {teamMembers.map((member) => (
             <div key={member.id}>
+              <Link to={member.linkedin}>
               <img
                 className="h-[205px] w-auto rounded-full"
                 src={member.image}
               />
+              
               <div className="text-center font-satoshi text-[34px] font-bold">
                 {member.name}
               </div>
+              </Link>
             </div>
           ))}
         </div>
