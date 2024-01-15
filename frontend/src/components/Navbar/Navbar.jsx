@@ -29,22 +29,22 @@ const Navbar = () => {
       <div className="w-auto hidden md:hidden lg:block xl:block">
         <ul className="flex justify-center items-center gap-[47.95px]">
           <NavLink to={"/"}>
-            <li className="text-[#404040] cursor-pointer text-[17.38px] leading-[34.27px] font-[500]">
+            <li className="text-[#404040] cursor-pointer text-[17.38px] leading-[34.27px] font-[500] hover:text-black">
               Home
             </li>
           </NavLink>
           <NavLink to={"/about"}>
-            <li className="text-[#404040] cursor-pointer text-[17.38px] leading-[34.27px] font-[500]">
+            <li className="text-[#404040] cursor-pointer text-[17.38px] leading-[34.27px] font-[500] hover:text-black">
               About Us
             </li>
           </NavLink>
           <NavLink to={"/howtouse"}>
-            <li className="text-[#404040] cursor-pointer text-[17.38px] leading-[34.27px] font-[500]">
+            <li className="text-[#404040] cursor-pointer text-[17.38px] leading-[34.27px] font-[500] hover:text-black">
               How to use
             </li>
           </NavLink>
           <NavLink to={"/mychallenges"}>
-            <li className="text-[#404040] cursor-pointer text-[17.38px] leading-[34.27px] font-[500]">
+            <li className="text-[#404040] cursor-pointer text-[17.38px] leading-[34.27px] font-[500] hover:text-black">
               Challenges
             </li>
           </NavLink>
