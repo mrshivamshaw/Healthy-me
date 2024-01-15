@@ -5,9 +5,8 @@ import './Calender.css'
 function Calander() {
   return (
     <div>
-        Calander
         <div>
-            <Calendar className="rounded-3xl bg-white bg-opacity-75 drop-shadow-sm shadow-lg border-none p-5" />
+            <Calendar className="rounded-3xl bg-white bg-opacity-75 drop-shadow-sm shadow-lg border-none p-5 " />
         </div>
     </div>
   )
