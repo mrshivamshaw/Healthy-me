@@ -12,13 +12,13 @@ import ChallengeModal from "./challengeModal/ChallengeModal";
 
 function ChallangesOverview() {
 	const [challengeModal,setChallengeModal] = useState(false)
-	useEffect(()=>{
-
-	},[challengeModal])
 	const currentDate = new Date();
 	const currentDay = currentDate.getDay();
 	const currentMonth = currentDate.getMonth();
 	const date = currentDate.getDate();
+	useEffect(()=>{
+		console.log('challenges');
+	},[challengeModal])
 	const daysOfWeek = [
 		"Sunday",
 		"Monday",
@@ -46,9 +46,6 @@ function ChallangesOverview() {
 
 	const today = daysOfWeek[currentDay];
 	const thisMonth = monthsOfYear[currentMonth];
-	console.log(today);
-	console.log(thisMonth);
-	console.log(date);
 	return (
 		<div className="w-[100vw] mt-[15vh] md:mt-[15vh] lg:mt-[15vh] xl:mt-[10vh] h-[90vh] overflow-hidden relative">
 			<img src={topSvg} alt="top" className="absolute h-[40vh] bottom-0 z-0"/>
@@ -58,15 +55,15 @@ function ChallangesOverview() {
 					<h1 className="text-3xl font-bold">Hey! <span className="font-medium text-[#1678F2]">{localStorage.getItem('userName')}</span></h1>
 					<h2 className="text-3xl font-medium">Welcome Back</h2>
 				</div>
-				<div className="flex justify-center items-start gap-10">
+				<div className="flex justify-center items-center gap-10">
 					<Calander />
-					<Task setChallengeModal={setChallengeModal}/>
+					<Task setChallengeModal={setChallengeModal} challengeModal={challengeModal}/>
 					<Leaderboard/>
 				</div>
 			</div>
 			{
 				challengeModal &&
-			<ChallengeModal setChallengeModal={setChallengeModal}/>
+			<ChallengeModal setChallengeModal={setChallengeModal} challengeModal={challengeModal}/>
 			}
 		</div>
 	);

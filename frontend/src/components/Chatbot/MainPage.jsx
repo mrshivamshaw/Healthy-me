@@ -27,10 +27,9 @@ function MainPage() {
                 </div>
                 <Chatbot />
             </div>
-          <div className='flex flex-col justify-center items-center text-6xl font-bold'>
-           <span className='p-5 text-teal-600 border rounded-3xl rounded-tl-none  drop-shadow-md my-5'>INQUIRE </span>
-          <span className='p-5 text-pink-600 border rounded-3xl drop-shadow-md my-5'>CONSULT</span>
-          <span className='p-5 text-purple-600 border rounded-3xl rounded-br-none drop-shadow-md my-5'>EXPLORE</span>
+          <div className='self-center text-5xl w-[40%] capitalize font-bold'>
+          Hey! <span className='text-[#3A8EF6]'>{localStorage.getItem('userName')}</span> let's talk for <span className='text-[#3A8EF6]'>your</span> better <span className='text-[#3A8EF6]'>health</span>💙
+
           </div>
         </div>
     </div>
