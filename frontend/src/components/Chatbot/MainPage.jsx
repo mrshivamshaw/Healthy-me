@@ -29,6 +29,7 @@ function MainPage() {
             </div>
           <div className='self-center text-5xl w-[40%] capitalize font-bold'>
           Hey! <span className='text-[#3A8EF6]'>{localStorage.getItem('userName')}</span> let's talk for <span className='text-[#3A8EF6]'>your</span> better <span className='text-[#3A8EF6]'>health</span>💙
+
           </div>
         </div>
     </div>
