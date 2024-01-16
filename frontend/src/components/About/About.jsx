@@ -25,15 +25,15 @@ function About() {
       <div>
       <div className="text-[3vw] font-[600] pb-10">Our Story</div>
       <div>
-        <div>
+        <div className="text-[#999191] text-[1.2vw] pb-10">
         Hey there! We're Healthy ME!, a bunch of college friends who decided to tackle a common
 problem - finding reliable info about health stuff. Yep, we've all been there, googling
 symptoms and getting overwhelmed with jargon and this is our attempt at fixing the issue.
         </div>
         {/* Who we are */}
         <div>
-        <div className="text-[2.5vw] font-[600] pb-10">Who We Are</div>
-        <div>
+        <div className="text-[2vw] font-[600] pb-2">Who We Are</div>
+        <div className="text-[#999191] text-[1.2vw] pb-10">
         Our team comprises students from Information technology and AI and ML,brought together
 by our shared enthusiasm for technology and a desire to contribute meaningfully to society.
 What started as a late-night discussion has evolved into a dedicated effort to provide
@@ -42,8 +42,8 @@ accessible and accurate information to those seeking answers to their medical qu
         </div>
         {/* The Spark of Inspiration */}
         <div>
-        <div className="text-[2.5vw] font-[600] pb-10">The Spark of Inspiration</div>
-        <div>
+        <div className="text-[2vw] font-[600] pb-2">The Spark of Inspiration</div>
+        <div className="text-[#999191] text-[1.2vw] pb-10">
         The idea behind Healthy ME! was born from our own experiences navigating the complexities
 of healthcare. We recognized the need for a platform that not only answered medical
 questions but also did so in a way that was easy to understand, trustworthy, and tailored to
@@ -52,8 +52,8 @@ individual needs.
         </div>
         {/* Building Bridges to Wellness */}
         <div>
-        <div className="text-[2.5vw] font-[600] pb-10">Building Bridges to Wellness</div>
-        <div>
+        <div className="text-[2vw] font-[600] pb-2">Building Bridges to Wellness</div>
+        <div className="text-[#999191] text-[1.2vw] pb-10">
         Our journey involved countless hours of research, collaboration, and learning. We delved into
 the intricacies of medical knowledge and combined our skills to create a user-friendly website
 that serves as a reliable resource for anyone seeking answers to their medical queries.
@@ -61,8 +61,8 @@ that serves as a reliable resource for anyone seeking answers to their medical q
         </div>
         {/* Empowering You, One Query at a Time */}
         <div>
-        <div className="text-[2.5vw] font-[600] pb-10">Empowering You, One Query at a Time</div>
-        <div>
+        <div className="text-[2vw] font-[600] pb-2">Empowering You, One Query at a Time</div>
+        <div className="text-[#999191] text-[1.2vw] pb-10">
         At Healthy ME!, we believe that everyone deserves access to accurate information about
 their health. Our commitment is to empower individuals with the knowledge they need to
 make informed decisions about their well-being. Whether you're curious about symptoms,
@@ -71,8 +71,8 @@ treatments, or general health advice, our platform is here to guide you.
         </div>
         {/* Join Us on This Journey */}
         <div>
-        <div className="text-[2.5vw] font-[600] pb-10">Join Us on This Journey</div>
-        <div>
+        <div className="text-[2vw] font-[600] pb-2">Join Us on This Journey</div>
+        <div className="text-[#999191] text-[1.2vw] pb-10">
         As we continue to grow and evolve, we invite you to join us on this exciting journey. Your
 feedback, experiences, and stories inspire us to enhance our platform and make a positive
 impact on the lives of many. Together, let's build a community where health information is
