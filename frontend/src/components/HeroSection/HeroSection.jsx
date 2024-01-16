@@ -5,6 +5,8 @@ import bgImage from "../../assets/Background.png";
 import heart from "../../assets/Group 20.png";
 import tele from "../../assets/surface1.png";
 import bot from "../../assets/Path 168.png";
+import { TbTargetArrow } from "react-icons/tb";
+
 
 const HeroSection = () => {
   return (
@@ -37,10 +39,14 @@ const HeroSection = () => {
           <Link to = "/chatbot">
           <button
             className="flex mt-20 justify-center items-center gap-5  font-satoshi text-white px-8 py-3 rounded-xl shadow-sm drop-shadow"
+          
+
             style={{
-              background:
-                "linear-gradient(180deg, rgba(71, 121, 247, 0.85) 0%, rgba(108, 174, 255, 0.85) 99.98%, rgba(140, 9, 244, 0.85) 99.99%)",
+              background: "linear-gradient(180deg, #006AFF 0%, rgba(0, 106, 255, 0.55) 100%)",
+
+
             }}
+
           >
             <img src={bot} alt="bot" className="h-[40px]" />
             <p className="text-[20px] font-[600]"> Talk to Me! </p>
@@ -49,14 +55,16 @@ const HeroSection = () => {
           </Link><Link to = "/myChallenges">
           <button
             className="flex mt-20 justify-center items-center gap-2 font-satoshi text-white px-6 py-3 rounded-xl shadow-sm drop-shadow"
+            
             style={{
-              background:
-                "linear-gradient(180deg, rgba(71, 121, 247, 0.85) 0%, rgba(108, 174, 255, 0.85) 99.98%, rgba(140, 9, 244, 0.85) 99.99%)",
+              background: "linear-gradient(180deg, #212121 0%, rgba(33, 33, 33, 0.66) 100%)",
+
+
             }}
           >
-            <img src={bot} alt="bot" className="h-[38px]" />
-            <p className="text-[20px] font-[600]">Challenge Yourself !!</p>
-            <img src={tele} alt="tele" className="h-[25px]" />
+            
+            <p className="text-[20px] font-[600]">Challenge Yourself </p>
+            <TbTargetArrow className="text-2xl"/>
           </button>
           </Link>
           </div>

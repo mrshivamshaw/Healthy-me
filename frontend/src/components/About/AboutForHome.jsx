@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import teamMembers from "./TeamMembers";
 import aboutUs from "../../assets/AboutUs.png";
 
@@ -30,20 +30,23 @@ function AboutForHome() {
           </NavLink>
         </div>
       </div>
-      <div>
-        <div className=" text-center text-[50px] font-[600] pb-10 tracking-wider mt-[15vh]">
+      <div className="text-center">
+        <div className=" text-[50px] underline decoration-2 underline-offset-4 font-satoshi tracking-wide pb-10">
           Meet Our Team
         </div>
         <div className="flex justify-around">
           {teamMembers.map((member) => (
-            <div key={member.id}>
+            <div key={member.id} className="hover:scale-105 hover:text-[#1678F2]">
+              <Link to={member.linkedin}>
               <img
                 className="h-[205px] w-auto rounded-full"
                 src={member.image}
               />
-              <div className="text-center font-satoshi text-[34px] font-bold">
+              
+              <div className="text-center font-satoshi text-[34px] font-bold ">
                 {member.name}
               </div>
+              </Link>
             </div>
           ))}
         </div>
