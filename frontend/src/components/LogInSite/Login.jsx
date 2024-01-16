@@ -26,7 +26,7 @@ const Login = () => {
         })
         .then((res) => {
           if (res.data.success === true) {
-            navigate("/home");
+            navigate("/");
             toast.success(res.data.message);
             console.log(res.data.token);
             console.log(res.data.user);

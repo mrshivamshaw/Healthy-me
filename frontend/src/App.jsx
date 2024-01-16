@@ -10,6 +10,7 @@ import { AuthProvider } from './contextApi/ContextApi';
 import Navbar from './components/Navbar/Navbar';
 import MainPage from './components/Chatbot/MainPage';
 import ChallangesOverview from './components/Challenges/ChallangesOverview';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
 
 function App() {
   return (
@@ -17,16 +18,13 @@ function App() {
       <div className='bg-[#F3F3FD]'>
         <Navbar />
         <Routes>
-          <Route path='/' >
-            <Route path='' element = {<Home />} />
-            <Route path='home' element={<Home/>}/>
+            <Route index path='/' element={<Home/>}/>
             <Route path='about' element={<About/>}/>
             <Route path='howtouse' element={<HowToUse/>}/>
             <Route path ='login' element={<Login/>}/>
             <Route path ='signin' element={<SignIn/>}/>
-            <Route path='chatbot' element={<MainPage />} />
-            <Route path='mychallenges' element={<ChallangesOverview />} />
-        </Route>
+            <Route path='chatbot' element={<PrivateRoute ><MainPage/></PrivateRoute>} />
+            <Route path='mychallenges' element={<PrivateRoute ><ChallangesOverview /></PrivateRoute>} />
         </Routes>
         <ToastContainer/>
         </div>
