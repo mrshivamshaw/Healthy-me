@@ -6,11 +6,11 @@ import Chatbot from './Chatbot';
 
 function MainPage() {
   return (
-    <div className='w-[85vw] mx-auto'>
+    <div className='w-screen mt-[10vh] h-[90vh] overflow-hidden bg-[#F9F7F7]'>
 
-        <div className='flex pt-[15vh] justify-around'>
-            <div className='h-auto w-[35vw]'>
-                <div className='flex justify-around shadow-lg rounded-3xl overflow-hidden mt-1 mb-4 bg-[#F9F7F7]'>
+        <div className='flex justify-around w-[85vw] mx-auto'>
+            <div className='h-auto w-[50%]'>
+                <div className='flex justify-around shadow-lg rounded-3xl overflow-hidden mt-1 mb-4 '>
                     <input className='h-12 rounded-3xl bg-[#F9F7F7] outline-none text-slate-900 text-xl' type="text" placeholder='ask me anything' />
                    
                    <div className='self-center'>

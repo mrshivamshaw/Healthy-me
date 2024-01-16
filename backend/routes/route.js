@@ -20,9 +20,10 @@ router.get('/userchallenge/:id',fetchUserChallenges)
 router.get('/getAllUser', async (req, res) => {
   try {
     const users = await user.find({}).exec();
+    const sortedData = users.sort((a, b) => b.totalPoint - a.totalPoint);
     res.status(200).json({
       success: true,
-      data: users
+      data: sortedData
     });
   } catch (err) {
     res.status(404).json({

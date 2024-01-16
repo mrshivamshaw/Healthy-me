@@ -4,13 +4,12 @@ import { toast } from 'react-toastify';
 import './Task/task.css'
 
 function Leaderboard() {
-  const [top,setTop] = useState([])
+  const [sortedData,setSortedData] = useState();
   useEffect(()=>{
     const fetchUser = async() =>{
         try {
-          const data = await axios.get('http://localhost:3000/api/v1/getAllUser');
-          const sortedData = data.data.data.sort((a, b) => b.totalPoint - a.totalPoint);
-          setTop(prev => [...prev,...sortedData])
+          const res = await axios.get('http://localhost:3000/api/v1/getAllUser');
+          setSortedData(res.data.data)
         } catch (error) {
           console.error(console.error());
           toast.warning("Unable to Fetch")
@@ -21,10 +20,10 @@ function Leaderboard() {
   
   return (
     <div className='flex flex-col justify-start min-w-[25vw] h-[46vh] bg-white rounded-xl shadow-xl z-[20] py-3'>
-      <h1 className='w-full text-center text-3xl font-bold'>Top 10🔥</h1>
+      <h1 className='w-full text-center text-3xl font-bold'>Top 5🔥</h1>
       <div className='flex flex-col justify-start items-start pl-5 py-5 overflow-y-scroll task-list'>
         {
-          top.map((item,index) => (
+          sortedData?.map((item,index) => (
           <div key={index} className='flex w-full justify-start items-center gap-4'>
             <div className='relative flex justify-center items-center'>
               <span className='absolute z-0 text-3xl'>⭐</span>

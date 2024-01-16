@@ -39,7 +39,7 @@ function AboutForHome() {
             <div key={member.id} className="hover:scale-105 hover:text-[#1678F2]">
               <Link to={member.linkedin}>
               <img
-                className="h-[205px] w-auto rounded-full"
+                className="h-[205px] w-[205px] rounded-full"
                 src={member.image}
               />
               
