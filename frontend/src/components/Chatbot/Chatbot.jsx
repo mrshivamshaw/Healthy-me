@@ -60,12 +60,12 @@ function Chatbot() {
                     I am Rabi, your personal assistant for today. Tell me how I can assist you and I will be glad to assist. 
                 </div>
             </div>
-            <div className='flex flex-col space-y-4' >
+            <div className='flex flex-col space-y-4 h-[40vh] overflow-hidden overflow-y-scroll' >
             {chatLog.map((message , index) => (
                 <div key={index}
                 className={`m-5 flex ${message.type === 'user'? 'justify-end' : 'justify-start'}`}
                 >
-                    <div className={`${message.type === 'user' ? 'bg-white rounded-br-none' : 'bg-[#5D6EF7] rounded-bl-none'} rounded-3xl p-4 `}>
+                    <div className={`${message.type === 'user' ? 'bg-white rounded-br-none' : 'bg-[#5D6EF7] rounded-bl-none'} rounded-3xl p-4 max-w-[20vw] overflow-x-auto`}>
                         {message.message}
                     </div>
                     
