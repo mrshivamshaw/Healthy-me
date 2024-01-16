@@ -14,6 +14,8 @@ const Navbar = () => {
   },[isLoggedIn])
   const logOutHandler = () =>{
     localStorage.removeItem("token")
+    localStorage.removeItem("userName")
+    localStorage.removeItem("userId")
     setIsLoggedIn(false)
   }
   return (
