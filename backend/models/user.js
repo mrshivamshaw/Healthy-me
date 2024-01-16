@@ -31,7 +31,11 @@ const user = new mongoose.Schema({
     challenges:[
         {type:mongoose.Schema.Types.ObjectId,
         ref:"challenge"}
-    ]
+    ],
+    totalPoint:{
+        type : Number,
+        default:0
+    },
     
 
 })

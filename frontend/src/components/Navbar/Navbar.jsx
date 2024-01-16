@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import logo from "../../assets/healthyme.png";
 import { FaBars, FaTimes } from "react-icons/fa";
 import MobileSize from "./MobileSize";
 import { useAuth } from "../../contextApi/ContextApi";
 
 const Navbar = () => {
-
+  const navigate = useNavigate()
   const {isLoggedIn,setIsLoggedIn,checkAuth} = useAuth()
   const [navActive,SetNavActive] = useState(false)
   useEffect(()=>{
@@ -17,6 +17,7 @@ const Navbar = () => {
     localStorage.removeItem("userName")
     localStorage.removeItem("userId")
     setIsLoggedIn(false)
+    navigate('/login')
   }
   return (
     <div className="z-40 fixed top-0 left-0 h-[10vh] w-[100vw] bg-white flex justify-between shadow-md items-center px-[7vw] overflow-hidden mb-[10vh] md:mb-[10vh] lg:mb-[10vh] xl:mb-0">

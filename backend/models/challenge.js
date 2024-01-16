@@ -11,12 +11,16 @@ const challengeSchema = new mongoose.Schema({
     },
     startDate:{ 
         type:Date,
-        default:Date.now,
+        default:Date.now(),
         
     },
     endDate:{ 
         type:Date,
-        default:Date.now,
+        default:Date.now(),
+    },
+    completed:{
+        type:Boolean,
+        default:false
     }
 })
 
