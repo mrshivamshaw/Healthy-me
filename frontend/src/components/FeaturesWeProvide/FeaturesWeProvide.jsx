@@ -17,7 +17,8 @@ function FeaturesWeProvide() {
             now easier
             </div>
             <div className='font-[700] text-[1.3vw] text-[#8A8585]'>
-            We calculate your BMI index from data like age, height, weight.
+            {/* We calculate your BMI index from data like age, height, weight. */}
+            Reliable and relevant health guidance that you can trust.
             </div>
         </div>
         <div className='grid grid-cols-3 grid-rows-2 gap-4'>
