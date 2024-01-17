@@ -1,69 +1,68 @@
 import user from "../models/user.js";
-import bcrypt from 'bcrypt'
-import jwt  from "jsonwebtoken";
-import {config as configDotenv } from "dotenv";
-configDotenv()
+import bcrypt from 'bcryptjs';  // Change this line
+import jwt from "jsonwebtoken";
+import { config as configDotenv } from "dotenv";
+configDotenv();
 
-export const signin = async (req,res) =>{
-    try {
-        const {firstName,lastName,email,password,confirmPassword,contactNumber,age} = req.body;
-        if(!firstName || !lastName || !email || !password || !confirmPassword || !contactNumber || !age){
-            return res.status(200).json({
-                success: false,
-                message : "All fields are reqired",
-            })
-        }
-        const checkUser = await user.findOne({ email: email });
-
-        if(checkUser){
-            return res.status(200).json({
-                success: false,
-                message : "User already resgistered",
-            })
-        }
-
-        if(password !== confirmPassword){
-            return res.status(200).json({
-                success: false,
-                message : "password not matched",
-            })
-        }
-
-        let hashedPass 
-        try {
-            hashedPass = await bcrypt.hash(password,10)
-            
-        } catch (error) {
-            return res.status(200).json({
-                success: false,
-                message : "password not hashed",
-            })
-        }
-        const userData = await user.create(
-            {
-                firstName:firstName,
-                lastName:lastName,
-                email:email,
-                password:hashedPass,
-                contactNumber:contactNumber,
-                age:age,
-
-            }
-        )
-
-        return res.status(200).json({
-            success: true,
-            message : "User registered successfully",
-            data:userData
-        })
-    } catch (error) {
-        console.log(error);
-        return res.status(500).json({
-            success: false,
-            message : "something went wrong while registering user",
-        })
+export const signin = async (req, res) => {
+  try {
+    const { firstName, lastName, email, password, confirmPassword, contactNumber, age } = req.body;
+    if (!firstName || !lastName || !email || !password || !confirmPassword || !contactNumber || !age) {
+      return res.status(200).json({
+        success: false,
+        message: "All fields are required",
+      });
     }
-}
+    const checkUser = await user.findOne({ email: email });
+
+    if (checkUser) {
+      return res.status(200).json({
+        success: false,
+        message: "User already registered",
+      });
+    }
+
+    if (password !== confirmPassword) {
+      return res.status(200).json({
+        success: false,
+        message: "Password not matched",
+      });
+    }
+
+    let hashedPass;
+    try {
+      hashedPass = await bcrypt.hash(password, 10);
+    } catch (error) {
+      return res.status(200).json({
+        success: false,
+        message: "Password not hashed",
+      });
+    }
+    const userData = await user.create(
+      {
+        firstName: firstName,
+        lastName: lastName,
+        email: email,
+        password: hashedPass,
+        contactNumber: contactNumber,
+        age: age,
+      }
+    );
+
+    return res.status(200).json({
+      success: true,
+      message: "User registered successfully",
+      data: userData,
+    });
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json({
+      success: false,
+      message: "Something went wrong while registering user",
+    });
+  }
+};
+
 
 export const login = async (req, res) => {
     try {
