@@ -6,7 +6,7 @@ function Calander() {
   return (
     <div>
         <div>
-            <Calendar className="rounded-3xl bg-white bg-opacity-75 drop-shadow-sm shadow-lg border-none p-5 " />
+            <Calendar className="rounded-3xl bg-white bg-opacity-75 drop-shadow-sm shadow-lg border-none p-10 " />
         </div>
     </div>
   )

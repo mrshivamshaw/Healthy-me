@@ -32,8 +32,7 @@ const HeroSection = () => {
             for all your medical queries
           </div>
           <p className="mt-3 text-xl font-satoshi font-[600] text-[#8A8585]">
-            Using your BMI index we calculate whether the dish is suitable for
-            you.
+          Reliable and relevant health guidance that you can trust.
           </p>
           <div className="flex items-center justify-center gap-4">
           <Link to = "/chatbot">

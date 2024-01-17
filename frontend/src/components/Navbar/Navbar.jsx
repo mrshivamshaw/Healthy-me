@@ -41,9 +41,9 @@ const Navbar = () => {
               About Us
             </li>
           </NavLink>
-          <NavLink to={"/howtouse"}>
+          <NavLink to={"/chatbot"}>
             <li className="text-[#404040] cursor-pointer text-[17.38px] leading-[34.27px] font-[500] hover:text-black">
-              How to use
+              Chatbot
             </li>
           </NavLink>
           <NavLink to={"/mychallenges"}>
@@ -54,7 +54,7 @@ const Navbar = () => {
           {!isLoggedIn && <NavLink to={"/login"}>
              <li className="text-[#404040] cursor-pointer text-[17.38px] leading-[34.27px] font-[500]">
               <button
-                className="px-4 py-1 text-center text-white rounded-xl text-2xl"
+                className="px-4 py-1 text-center text-white rounded-xl text-xl"
                 style={{
                   background:
                     "linear-gradient(96.14deg, #3A8EF6 -10.84%, #6F3AFA 196.74%, #6F3AFA 196.74%)",
@@ -67,7 +67,7 @@ const Navbar = () => {
           {isLoggedIn && <li className="text-[#404040] cursor-pointer text-[17.38px] leading-[34.27px] font-[500]">
               <button 
                 onClick={logOutHandler}
-                className="px-4 py-1 text-center text-white rounded-xl text-2xl"
+                className="px-4 py-1 text-center text-white rounded-xl text-xl"
                 style={{
                   background:
                     "linear-gradient(96.14deg, #3A8EF6 -10.84%, #6F3AFA 196.74%, #6F3AFA 196.74%)",

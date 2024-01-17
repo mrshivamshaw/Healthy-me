@@ -63,7 +63,7 @@ function Chatbot() {
             me how I can assist you and I will be glad to assist.
           </div>
         </div>
-        <div className="flex flex-col space-y-4 max-h-[52vh] overflow-hidden overflow-y-scroll chat-bot" ref={chatContainerRef}>
+        <div className="flex flex-col space-y-4 max-h-[50vh] overflow-hidden overflow-y-scroll chat-bot" ref={chatContainerRef}>
           {chatLog.map((message, index) => (
             <div
               key={index}
@@ -83,7 +83,7 @@ function Chatbot() {
                   ) : (
                   <div className="bot-message">
                     <p><strong>Disease:</strong> {message.message.disease}</p>
-                    <p><strong>Other Symptoms:</strong> {message.message.otherSymptoms}</p>
+                    
                     <p><strong>Remedies:</strong> {message.message.remedies}</p>
                     <p><strong>Doctor Type:</strong> {message.message.doctorType}</p>
                   </div>
@@ -115,7 +115,7 @@ function Chatbot() {
         )}
         <form
           onSubmit={handleSubmit}
-          className="fixed bottom-0 h-12 w-[80%] rounded-xl m-10 p-3 bg-white text-xl flex"
+          className="fixed bottom-0 h-12 w-[80%] rounded-xl m-[3vh] mx-[4vw] p-3 bg-white text-xl flex"
         >
           <input
             className="w-[70%] h-full outline-none rounded-3xl"
