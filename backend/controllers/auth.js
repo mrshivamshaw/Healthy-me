@@ -65,64 +65,61 @@ export const signin = async (req,res) =>{
     }
 }
 
-export const login = async(req,res) =>{
+export const login = async (req, res) => {
     try {
-        const {email,password} = req.body;
-        if(!email || !password){
+        const { email, password } = req.body;
+        if (!email || !password) {
             return res.status(200).json({
-                success : false,
-                message : "All fields are required"
-            })
+                success: false,
+                message: "All fields are required",
+            });
         }
-        var userData = await user.findOne({email:email})
 
-        if(!userData){
-            return res.status(200).json(
-                {
-                    success:false,
-                    message : "User not found please singin"
-                }
-            )
+        const userData = await user.findOne({ email: email });
+
+        if (!userData) {
+            return res.status(200).json({
+                success: false,
+                message: "User not found, please sign in",
+            });
         }
-        const payload = {
-            email:userData.email,
-            id:userData._id
-        }
-        if(await bcrypt.compare(password,userData.password)){
-            const token = jwt.sign(payload,process.env.SECRET_KEY,{expiresIn:"5d"})
-            userData = userData.toObject()
-            userData.token = token
-            userData.password = undefined
+
+        const passwordMatch = await bcrypt.compare(password, userData.password);
+
+        if (passwordMatch) {
+            const payload = {
+                email: userData.email,
+                id: userData._id,
+            };
+
+            const token = jwt.sign(payload, process.env.SECRET_KEY, { expiresIn: "5d" });
+
+            userData.password = undefined;
+            userData.token = token;
 
             const options = {
-                httpOnly:true,
-                expires: new Date(Date.now() + 30*24*60*60*1000)
-            }
+                httpOnly: true,
+                expires: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000),
+            };
 
-            res.cookie("token",token,options).status(200).json({
-                success:true,
-                token:token,
-                message:"user successfully logged in",
-                user:userData
-            })
-        }
-
-        else{
-            return res.status(200).json(
-                {
-                    success:false,
-                    message : "Incorrect password"
-                }
-            )
+            res.cookie("token", token, options).status(200).json({
+                success: true,
+                token: token,
+                message: "User successfully logged in",
+                user: userData,
+            });
+        } else {
+            return res.status(200).json({
+                success: false,
+                message: "Incorrect password",
+            });
         }
     } catch (error) {
-        console.log(error);
-        return res.status(404).json(
-            {
-                success:false,
-                message : "Error while logging user"
-            }
-        )
-
+        console.error(error);
+        return res.status(404).json({
+            success: false,
+            message: "Error while logging user",
+            error: error.message,
+        });
     }
-}
+};

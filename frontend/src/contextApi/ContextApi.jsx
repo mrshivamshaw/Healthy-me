@@ -7,29 +7,30 @@ export const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
   const checkAuth = async () => {
     try {
-      const response = await axios.post(
-        "http://localhost:3000/api/v1/checkAuth",
-        null,
-        {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
+        const response = await axios.post(
+            "http://localhost:3000/api/v1/checkAuth",
+            null,
+            {
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem("token")}`,
+                },
+            }
+        );
+
+        if (response.data.message !== "Access granted") {
+            localStorage.removeItem("token");
+            setIsLoggedIn(false); // Update the state when the token is removed
+            console.log("not granted");
         }
-      );
 
-      if (response.data.message !== "Access granted") {
-        localStorage.removeItem("token");
-        setIsLoggedIn(false); // Update the state when the token is removed
-        console.log("not granted");
-      }
-
-      return response.data.message
+        return response.data.message;
     } catch (error) {
-      localStorage.removeItem("token");
-      setIsLoggedIn(false);
-      console.log("error while login", error);
+        localStorage.removeItem("token");
+        setIsLoggedIn(false);
+        console.log("error while login", error);
     }
-  };
+};
+
 
   useEffect(() => {
     checkAuth(); // Automatically check authentication on app load
