@@ -14,7 +14,7 @@ import {
 function Footer() {
   return (
     <div className="w-[100vw] bg-white rounded-t-[4vw] pt-[4.5vw] px-[3vw] font-[400] text-[21.59px] overflow-x-hidden">
-      <div className="w-[85vw] mx-auto flex flex-wrap text-[#4F555A] justify-start gap-[50px] md:gap-[50px] lg:gap-[80px] xl:gap-[155px] items-start pb-[3vw] overflow-x-hidden">
+      <div className="w-[85vw] mx-auto flex flex-wrap text-[#4F555A] justify-between gap-[3vw] md:gap-[3vw] lg:gap-[3vw] xl:gap-[3vw] items-start pb-[3vw] overflow-x-hidden">
         <div className="flex flex-col justify-start items-start w-[261px] gap-6">
           <img
             src="https://res.cloudinary.com/dnrwlbbbj/image/upload/v1702320663/check/Group_1_d0tqtt.png"
@@ -64,7 +64,7 @@ function Footer() {
             <div>Chat support</div>
           </div>
         </div>
-        <div className="flex flex-col justify-center items-start w-[153px]">
+        <div className="flex flex-col justify-center items-start w-auto">
           <div className="text-[#1678F2] font-[700] pb-[1.5vw]">Contact us</div>
           <div className="flex flex-col justify-center items-start gap-2">
 
