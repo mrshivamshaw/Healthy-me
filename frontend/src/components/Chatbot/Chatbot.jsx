@@ -2,18 +2,18 @@ import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { IoMdAttach } from "react-icons/io";
 import { MdOutlineEmojiEmotions } from "react-icons/md";
-import { BsFillSendFill } from "react-icons/bs";
 import TypingAnimation from "./TypingAnimation";
 import send from "../../assets/send.png";
 import ChatbotIcon from "../../assets/ChatbotIcon.png";
-const API_KEY = "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";
 import './chatbot.css'
+import doctors from "./Doctors";
 
 function Chatbot() {
   const [inputValue, setInputValue] = useState("");
   const [chatLog, setChatLog] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const chatContainerRef = useRef(null);
+
   useEffect(() => {
     // Scroll to the bottom when chatLog changes
     if (chatContainerRef.current) {
@@ -28,57 +28,46 @@ function Chatbot() {
       { type: "user", message: inputValue },
     ]);
 
-    // sendMessage(inputValue)
+    sendMessage(inputValue)
 
     setInputValue("");
   };
-  const sendMessage = (message) => {
-    // const url = 'https://api.openai.com/v1/chat/completions';
-    // const headers = {
-    //     'Content-type' : 'application/json',
-    //     'Authorization' : 'Bearer ' + API_KEY
-    // }
-    // const data = {
-    //     model: "gpt-3.5-turbo",
-    //     messages: [{"role" : "user" , "content" : message}]
 
-    // }
-    setIsLoading(true);
-
-    axios
-      .post(url, data, { headers: headers })
-      .then((response) => {
-        console.log(response);
-        setChatLog((prevChatLog) => [
-          ...prevChatLog,
-          { type: "bot", message: response.data.choices[0].message.content },
-        ]);
-        setIsLoading(false);
-      })
-      .catch((error) => {
-        setIsLoading(false);
-        console.log(error);
-      });
+ const sendMessage = async (message) => {
+    try {
+      setIsLoading(true)
+      const response = await axios.get(`http://127.0.0.1:5000/?question=${message}`);
+      setChatLog((prevChatLog) => [
+        ...prevChatLog,
+        { type: "bot", message: response.data },
+      ]);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    } finally {
+      setIsLoading(false);
+    }
   };
+
+  
 
   return (
     <div>
-      <div className="h-[75vh] w-auto bg-[#F1F1FF] shadow-xl rounded-2xl drop-shadow-lg">
+      <div className="h-[78vh] w-auto bg-[#F1F1FF] shadow-xl rounded-2xl drop-shadow-lg">
         <div className="bg-white rounded-2xl">
           <div className="flex gap-4 border-b-2 p-3 px-3 py-3">
             <img src={ChatbotIcon} className="h-[50px] w-[50px]" />
             <div className="self-center font-bold text-2xl">Healthbot</div>
           </div>
           <div className="p-2 px-12 text-[#5E5E5E]">
-            Hi There! <br />I am Rabi, your personal assistant for today. Tell
+            Hi <span>{localStorage.getItem('userName')}</span>! <br />I am Rabi, your personal assistant for today. Tell
             me how I can assist you and I will be glad to assist.
           </div>
         </div>
-        <div className="flex flex-col space-y-4 max-h-[37vh] overflow-hidden overflow-y-scroll chat-bot" ref={chatContainerRef}>
+        <div className="flex flex-col space-y-4 max-h-[52vh] overflow-hidden overflow-y-scroll chat-bot" ref={chatContainerRef}>
           {chatLog.map((message, index) => (
             <div
               key={index}
-              className={`m-5 flex ${
+              className={`m-5 flex text-lg ${
                 message.type === "user" ? "justify-end" : "justify-start"
               }`}
             >
@@ -86,10 +75,33 @@ function Chatbot() {
                 className={`${
                   message.type === "user"
                     ? "bg-white rounded-br-none"
-                    : "bg-[#5D6EF7] rounded-bl-none"
-                } rounded-3xl p-4 max-w-[20vw] overflow-x-auto`}
+                    : "bg-[#5D6EF7] text-white rounded-bl-none"
+                } rounded-3xl p-4 max-w-[25vw] overflow-x-auto`}
               >
-                {message.message}
+                {message.type === "user" ? (
+                  <div className="user-message">{message.message}</div>
+                  ) : (
+                  <div className="bot-message">
+                    <p><strong>Disease:</strong> {message.message.disease}</p>
+                    <p><strong>Other Symptoms:</strong> {message.message.otherSymptoms}</p>
+                    <p><strong>Remedies:</strong> {message.message.remedies}</p>
+                    <p><strong>Doctor Type:</strong> {message.message.doctorType}</p>
+                  </div>
+                )}
+                
+                {message.type === "user" ? "" : doctors.map((doctor) => {
+                  if (doctor.type === message.message.doctorType) {
+                    return (
+                        <div key={doctor.type}>
+                            <p><strong>Name:</strong> {doctor.name}</p>
+                            <p><strong>Address:</strong> {doctor.address}</p>
+                            <p><strong>Contact Number:</strong> {doctor.contactNumber}</p>
+                        </div>
+                     );
+                    }
+                return null;
+              })}
+
               </div>
             </div>
           ))}
