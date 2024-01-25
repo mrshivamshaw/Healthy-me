@@ -47,6 +47,12 @@ const doctors =[
         address: "505 Lung Lane, Pulmo City",
         contactNumber: "555-3333"
       },
+      {
+        type: "Neurologist",
+        name: "Dr. Nathan Grey",
+        address: "606 Brain Boulevard, Neuroville",
+        contactNumber: "555-4444"
+      },
   
     ]
   export default doctors

@@ -19,8 +19,8 @@ function Leaderboard() {
   },[])
   
   return (
-    <div className='flex flex-col justify-start min-w-[25vw] h-[46vh] bg-white rounded-xl shadow-xl z-[20] py-3'>
-      <h1 className='w-full text-center text-3xl font-bold'>Top 5🔥</h1>
+    <div className='flex flex-col justify-start min-w-[25vw] h-[38vh] bg-white rounded-xl shadow-xl z-[20] py-3'>
+      <h1 className='w-full text-center text-3xl font-bold'>Top performers 🔥</h1>
       <div className='flex flex-col justify-start items-start pl-5 py-5 overflow-y-scroll task-list'>
         {
           sortedData?.map((item,index) => (
