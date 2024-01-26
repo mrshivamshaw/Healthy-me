@@ -15,7 +15,7 @@ const ChallengeModal = ({setChallengeModal}) => {
             return;
         }
         try {
-            const data = await axios.post(`http://localhost:3000/api/v1/createChallenge`,{
+            const data = await axios.post(`https://healthy-me-3en2.onrender.com/api/v1/createChallenge`,{
                 challengeName : name,
                 startDate : startDate,
                 endDate : endDate,
