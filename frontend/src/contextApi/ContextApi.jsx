@@ -8,7 +8,7 @@ export const AuthProvider = ({ children }) => {
   const checkAuth = async () => {
     try {
         const response = await axios.post(
-            "http://localhost:3000/api/v1/checkAuth",
+            "https://healthy-me-3en2.onrender.com/api/v1/checkAuth",
             null,
             {
                 headers: {

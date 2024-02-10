@@ -20,7 +20,7 @@ const Task = ({ setChallengeModal, challengeModal }) => {
       try {
         const userId = localStorage.getItem("userId");
         const task = await axios.get(
-          `http://localhost:3000/api/v1/userchallenge/${userId}`
+          `https://healthy-me-3en2.onrender.com/api/v1/userchallenge/${userId}`
         );
         localStorage.setItem("userName", task.data.challengesData.firstName);
         setChallenges(task.data.challengesData.challenges);
@@ -35,7 +35,7 @@ const Task = ({ setChallengeModal, challengeModal }) => {
   const taskCompleteHandler = async (id) => {
     try {
       const data = await axios
-        .post("http://localhost:3000/api/v1/challengeCompleted", {
+        .post("https://healthy-me-3en2.onrender.com/api/v1/challengeCompleted", {
           id: id,
         })
         .then(toast.success("Challege completed"));

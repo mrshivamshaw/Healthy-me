@@ -20,7 +20,7 @@ const Login = () => {
 
     try {
       await axios
-        .post("http://localhost:3000/api/v1/login", {
+        .post("https://healthy-me-3en2.onrender.com/api/v1/login", {
           email,
           password,
         })

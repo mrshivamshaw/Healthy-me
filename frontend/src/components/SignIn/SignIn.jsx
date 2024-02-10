@@ -20,7 +20,7 @@ const SignIn = () => {
   const signinHandler = async(e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:3000/api/v1/signin',{
+      await axios.post('https://healthy-me-3en2.onrender.com/api/v1/signin',{
         firstName,
         lastName,
         password,

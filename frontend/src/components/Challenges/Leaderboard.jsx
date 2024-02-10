@@ -8,7 +8,7 @@ function Leaderboard() {
   useEffect(()=>{
     const fetchUser = async() =>{
         try {
-          const res = await axios.get('http://localhost:3000/api/v1/getAllUser');
+          const res = await axios.get('https://healthy-me-3en2.onrender.com/api/v1/getAllUser');
           setSortedData(res.data.data)
         } catch (error) {
           console.error(console.error());
