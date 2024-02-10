@@ -1,5 +1,5 @@
 import React from 'react'
-import rewards from './rewards'
+import rewards from './rewards.js'
 
 function Rewards() {
   return (

@@ -26,7 +26,7 @@ function App() {
             <Route path ='signin' element={<SignIn/>}/>
             <Route path='chatbot' element={<PrivateRoute ><MainPage/></PrivateRoute>} />
             <Route path='mychallenges' element={<PrivateRoute ><ChallangesOverview /></PrivateRoute>} />
-            <Route path ='rewards' element={<RewardsPage/>}/>
+            <Route path ='rewards' element={<PrivateRoute ><RewardsPage/></PrivateRoute>}/>
         </Routes>
         <ToastContainer/>
         </div>
