@@ -10,6 +10,11 @@ const Task = ({ setChallengeModal, challengeModal }) => {
   const [challenges, setChallenges] = useState([]);
   const [refresh, setFresh] = useState(false);
   const [total, setTotal] = useState();
+
+  // async function createCalenderEvent() {
+  //   console.log("Creating Event")
+  // }
+
   useEffect(() => {
     const fetchTasks = async () => {
       try {
@@ -48,6 +53,7 @@ const Task = ({ setChallengeModal, challengeModal }) => {
           <button
             className="h-[40px] w-[40px] bg-[#1678F2] text-white rounded-full font-bold text-3xl text-center pb-5 shadow-md shadow-fuchsia-400"
             onClick={() => setChallengeModal(true)}
+            // onClick= {createCalenderEvent}
           >
             +
           </button>
