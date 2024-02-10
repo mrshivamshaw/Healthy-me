@@ -3,7 +3,7 @@ import rewards from './rewards'
 
 function Rewards() {
   return (
-    <div className='flex flex-wrap justify-center gap-14 min-h-[67vh]'>
+    <div className='flex flex-wrap justify-center  gap-x-14 gap-y-10 min-h-[67vh]'>
     {rewards.map((reward) => (
       <div key={reward.index} className='flex flex-col justify-center items-center mt-16 h-[400px] w-[500px] rounded-3xl shadow-xl bg-white'>
         <div>
