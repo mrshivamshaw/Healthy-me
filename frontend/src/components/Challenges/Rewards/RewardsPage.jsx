@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import topSvg from '../../../assets/Group 29 (1).png'
 import downSvg from '../../../assets/Group 27 (1).png'
-import Rewards from "./Rewards";
+import Rewards from "./Rewards.jsx";
 
 
 
