@@ -51,6 +51,11 @@ const Navbar = () => {
               Challenges
             </li>
           </NavLink>
+          <NavLink to={"/rewards"}>
+            <li className="text-[#404040] cursor-pointer text-[17.38px] leading-[34.27px] font-[500] hover:text-black">
+              Rewards
+            </li>
+          </NavLink>
           {!isLoggedIn && <NavLink to={"/login"}>
              <li className="text-[#404040] cursor-pointer text-[17.38px] leading-[34.27px] font-[500]">
               <button

@@ -11,6 +11,7 @@ import Navbar from './components/Navbar/Navbar';
 import MainPage from './components/Chatbot/MainPage';
 import ChallangesOverview from './components/Challenges/ChallangesOverview';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
+import RewardsPage from './components/Challenges/Rewards/RewardsPage';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             <Route path ='signin' element={<SignIn/>}/>
             <Route path='chatbot' element={<PrivateRoute ><MainPage/></PrivateRoute>} />
             <Route path='mychallenges' element={<PrivateRoute ><ChallangesOverview /></PrivateRoute>} />
+            <Route path ='rewards' element={<RewardsPage/>}/>
         </Routes>
         <ToastContainer/>
         </div>

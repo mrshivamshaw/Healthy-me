@@ -83,7 +83,7 @@ function Chatbot() {
                   ) : (
                   <div className="bot-message">
                     <p><strong>Disease:</strong> {message.message.disease}</p>
-                    
+                    <p><strong>Other Symptoms :</strong> {message.message.otherSymptoms}</p>
                     <p><strong>Remedies:</strong> {message.message.remedies}</p>
                     <p><strong>Doctor Type:</strong> {message.message.doctorType}</p>
                   </div>
