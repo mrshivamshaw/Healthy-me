@@ -17,6 +17,19 @@ const rewards = [
     playlistDetails: "Join the adventure with Professor Johnson and learn about ancient civilizations!",
     points: 11000
   },
+  {
+    index: 4,
+    playlist: "https://www.youtube.com/embed/videoseries?si=def456&amp;controls=0&amp;list=PLDEF456",
+    playlistDetails: "Discover the secrets of the universe with Astronaut Kate in this mind-blowing series!",
+    points: 8500
+  },
+  {
+    index: 5,
+    playlist: "https://www.youtube.com/embed/videoseries?si=ghi789&amp;controls=0&amp;list=PLGHI789",
+    playlistDetails: "Embark on a culinary journey with Chef Rodriguez and master the art of cooking!",
+    points: 9500
+  },
+
 ];
 
 export default rewards;

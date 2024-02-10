@@ -2,6 +2,8 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { FaTimes } from 'react-icons/fa'
 import { toast } from 'react-toastify';
+import SelectChallangeName from './SelectChallangeName';
+import SelectPoints from './SelectPoints';
 
 const ChallengeModal = ({setChallengeModal}) => {
     const [name,setName] = useState()
@@ -35,7 +37,7 @@ const ChallengeModal = ({setChallengeModal}) => {
     
   return (
     <div className='w-[100vw] h-[90vh] absolute z-50 flex justify-center items-center bg-black/30 top-0'>
-        <div className='bg-white h-auto p-4 rounded-xl'>
+        {/* <div className='bg-white h-auto p-4 rounded-xl'>
             <div onClick={()=>setChallengeModal(false)} className='cursor-pointer w-full flex justify-between items-center'>
                 <div className='text-2xl font-bold'>Add A New Challenge</div>
                 <FaTimes className='text-2xl'/></div>
@@ -67,7 +69,11 @@ const ChallengeModal = ({setChallengeModal}) => {
                 Add
               </button>
             </form>
-        </div>
+        </div> */}
+
+        {/* <SelectChallangeName /> */}
+        <SelectPoints />
+
     </div>
   )
 }
