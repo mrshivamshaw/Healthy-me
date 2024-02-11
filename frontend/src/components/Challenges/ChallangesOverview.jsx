@@ -33,7 +33,7 @@ function ChallangesOverview() {
 			<ChallengeModal setChallengeModal={setChallengeModal} challengeModal={challengeModal}/>
 			}
 		</div>
-	);
+	);setChallengeModal
 }
 
 export default ChallangesOverview;
