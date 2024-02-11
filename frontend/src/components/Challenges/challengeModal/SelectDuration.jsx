@@ -1,13 +1,13 @@
 import React from 'react'
 import { FaArrowLeftLong , FaArrowRight } from "react-icons/fa6";
-function SelectDuration() {
+function SelectDuration({setDurationModal,setDateModal,setPointModal}) {
   return (
     <div>
-        <div className='flex flex-col justify-center items-center h-[42vh] w-[28vw] bg-white shadow-2xl drop-shadow rounded-3xl p-5 m-5'>
-            <div className='flex justify-around m-5 mb-10 tracking-wide'>
-                <button className=' flex justify-center items-center text-white text-lg h-10 w-10 bg-indigo-500 rounded-full'><FaArrowLeftLong /></button>
+        <div className='flex flex-col justify-center items-center gap-[3vh] h-auto w-auto bg-white shadow-2xl drop-shadow rounded-3xl p-5 m-5'>
+            <div className='flex justify-between w-full tracking-wide'>
+                <button onClick={()=>{setDurationModal(false);setPointModal(true)}} className=' flex justify-center items-center text-white text-lg h-10 w-10 bg-indigo-500 rounded-full'><FaArrowLeftLong /></button>
                 <h1 className='text-3xl font-bold px-20'>Set Duration</h1>
-                <button className='flex justify-center items-center text-white text-lg  h-10 w-10 bg-indigo-500 rounded-full'><FaArrowRight /></button>
+                <button onClick={()=>{setDurationModal(false);setDateModal(true)}} className='flex justify-center items-center text-white text-lg  h-10 w-10 bg-indigo-500 rounded-full'><FaArrowRight /></button>
                 
             </div>
             <div className='grid grid-cols-2 grid-rows-3 gap-y-8 gap-x-20'>
