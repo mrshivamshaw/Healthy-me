@@ -41,7 +41,7 @@ router.get('/getAllUser', async (req, res) => {
 
 router.get('/getUser/:id', async(req,res) => {
     try {
-        const {id} = req.body;
+        const id = req.params.id;
         const data = await user.findById(id);
         return res.status(200).json({
             success: true,
@@ -62,7 +62,7 @@ router.post('/updateReward/:id', async(req,res) =>{
             $push: {
                 rewards: req.body.reward
             }
-        })
+        }, { new: true });
         return res.status(200).json({
             success: true,
             data
