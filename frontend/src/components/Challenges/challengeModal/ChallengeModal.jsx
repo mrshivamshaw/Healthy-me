@@ -72,6 +72,7 @@ const ChallengeModal = ({setChallengeModal}) => {
               </button>
             </form>
         </div> */}
+        
 
         {/* <SelectChallangeName /> */}
         {/* <SelectPoints /> */}
