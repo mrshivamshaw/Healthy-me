@@ -76,8 +76,8 @@ const ChallengeModal = ({setChallengeModal}) => {
 
         {/* <SelectChallangeName /> */}
         {/* <SelectPoints /> */}
-        {/* <SelectDuration /> */}
-        <SelectDate />
+        <SelectDuration />
+        {/* <SelectDate /> */}
 
     </div>
   )
