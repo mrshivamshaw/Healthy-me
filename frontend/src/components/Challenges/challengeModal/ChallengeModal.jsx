@@ -32,12 +32,14 @@ const ChallengeModal = ({ setChallengeModal }) => {
           endDate: endDate,
           point: point,
           id: localStorage.getItem("userId"),
+          duration: duration,
         }
       );
       setChallengeModal((prev) => !prev);
       toast.success("Challenge created succesfully");
     } catch (error) {
       console.log(error);
+      toast.error("Something went wrong");
     }
   };
 
