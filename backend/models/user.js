@@ -32,6 +32,9 @@ const user = new mongoose.Schema({
         {type:mongoose.Schema.Types.ObjectId,
         ref:"challenge"}
     ],
+    rewards:[
+        {type:String}
+    ],
     totalPoint:{
         type : Number,
         default:0

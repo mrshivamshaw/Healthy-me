@@ -39,6 +39,42 @@ router.get('/getAllUser', async (req, res) => {
     }
 });
 
+router.get('/getUser/:id', async(req,res) => {
+    try {
+        const {id} = req.body;
+        const data = await user.findById(id);
+        return res.status(200).json({
+            success: true,
+            data
+        })
+    } catch (error) {
+        return res.status(404).json({
+            success: false,
+            message: error
+        })
+    }
+})
+
+router.post('/updateReward/:id', async(req,res) =>{
+    try {
+        const userId = req.params.id;
+        const data = await user.findByIdAndUpdate(userId, {
+            $push: {
+                rewards: req.body.reward
+            }
+        })
+        return res.status(200).json({
+            success: true,
+            data
+        })
+    } catch (error) {
+        return res.status(404).json({
+            success: false,
+            message: error
+        })
+    }
+})
+
 // router.post('/clinicDatails', upload.single('file'), clinicController);
 
 export default router;
