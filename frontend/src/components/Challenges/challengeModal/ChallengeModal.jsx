@@ -4,6 +4,8 @@ import { FaTimes } from 'react-icons/fa'
 import { toast } from 'react-toastify';
 import SelectChallangeName from './SelectChallangeName';
 import SelectPoints from './SelectPoints';
+import SelectDuration from './SelectDuration';
+import SelectDate from './SelectDate';
 
 const ChallengeModal = ({setChallengeModal}) => {
     const [name,setName] = useState()
@@ -70,9 +72,12 @@ const ChallengeModal = ({setChallengeModal}) => {
               </button>
             </form>
         </div> */}
+        
 
         {/* <SelectChallangeName /> */}
-        <SelectPoints />
+        {/* <SelectPoints /> */}
+        {/* <SelectDuration /> */}
+        <SelectDate />
 
     </div>
   )
