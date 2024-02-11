@@ -8,21 +8,22 @@ import SelectDuration from "./SelectDuration";
 import SelectDate from "./SelectDate";
 
 const ChallengeModal = ({ setChallengeModal }) => {
-  const [name, setName] = useState();
+  const [name, setName] = useState('');
   const [startDate, setStartDate] = useState();
   const [endDate, setEndDate] = useState();
   const [point, setPoint] = useState(0);
+  const [duration, setDuration] = useState(0);
   const [nameModal, setNameModal] = useState(true);
   const [dateModal, setDateModal] = useState(false);
   const [pointModal, setPointModal] = useState(false);
   const [durationModal, setDurationModal] = useState(false);
-  const formHandler = async (e) => {
-    e.preventDefault();
+  const formHandler = async () => {
     if (!name || !startDate || !endDate || !point) {
       toast.warning("Please fill correctly");
       return;
     }
     try {
+      console.log("chalenge", name, startDate, endDate, point, duration);
       const data = await axios.post(
         `https://healthy-me-3en2.onrender.com/api/v1/createChallenge`,
         {
@@ -34,9 +35,7 @@ const ChallengeModal = ({ setChallengeModal }) => {
         }
       );
       setChallengeModal((prev) => !prev);
-      setRefresh((prev) => !prev);
       toast.success("Challenge created succesfully");
-      console.log(data);
     } catch (error) {
       console.log(error);
     }
@@ -80,10 +79,10 @@ const ChallengeModal = ({ setChallengeModal }) => {
     <div onClick={() => setChallengeModal(false)} className=" w-full h-full absolute z-40"></div>
 
       <div className="z-50">
-      {nameModal && <SelectChallangeName setNameModal={setNameModal} setPointModal={setPointModal}/>}
-      {pointModal && <SelectPoints setNameModal={setNameModal} setDurationModal={setDurationModal} setPointModal={setPointModal}/>}
-      {durationModal && <SelectDuration setPointModal={setPointModal} setDateModal={setDateModal} setDurationModal={setDurationModal}/>}
-      {dateModal && <SelectDate setDurationModal={setDurationModal} setDateModal={setDateModal}/>}
+      {nameModal && <SelectChallangeName setNameModal={setNameModal} setPointModal={setPointModal} name={name} setName={setName}/>}
+      {pointModal && <SelectPoints setNameModal={setNameModal} setDurationModal={setDurationModal} setPointModal={setPointModal} point={point} setPoint={setPoint}/>}
+      {durationModal && <SelectDuration duration={duration} setDuration={setDuration} setPointModal={setPointModal} setDateModal={setDateModal} setDurationModal={setDurationModal}/>}
+      {dateModal && <SelectDate setChallengeModal={setChallengeModal} setDurationModal={setDurationModal} setDateModal={setDateModal} formHandler={formHandler} startDate={startDate} endDate={endDate} setStartDate={setStartDate} setEndDate={setEndDate} />}
       </div>
     </div>
   );

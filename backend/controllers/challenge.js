@@ -3,8 +3,8 @@ import challenge from "../models/challenge.js";
 
 const handelChallenge = async (req, res) => {
   try {
-    const { challengeName, point, id ,startDate, endDate} = req.body;
-    if (!challengeName || !point || !id) {
+    const { challengeName, point, id ,startDate, endDate, duration} = req.body;
+    if (!challengeName || !point || !id || !duration) {
       return res.status(403).json({
         success: false,
         message: "Please fill all the fields",
@@ -14,7 +14,8 @@ const handelChallenge = async (req, res) => {
         challengeName: challengeName,
         point: point,
         startDate : startDate,
-        endDate : endDate
+        endDate : endDate,
+        duration : duration,
       });
   
       const userId = id;
@@ -31,6 +32,7 @@ const handelChallenge = async (req, res) => {
         message: "Challenge created successfully",
         data: ChallengeData,
         updatedUser: updatedUser,
+        duration : duration 
       });
     } catch (error) {
       console.log(error);

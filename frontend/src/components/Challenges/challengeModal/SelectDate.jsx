@@ -2,7 +2,8 @@ import React from "react";
 // import Calendar from 'react-calendar';
 import Calander from "../Calender/Calander";
 import { FaArrowLeftLong, FaArrowRight } from "react-icons/fa6";
-function SelectDate({setDateModal,setDurationModal}) {
+import { toast } from "react-toastify";
+function SelectDate({setDateModal,setDurationModal,formHandler,startDate,endDate,setStartDate,setEndDate,setChallengeModal}) {
   return (
     <div>
       <div className="flex flex-col gap-5 justify-center items-center h-auto w-auto bg-white shadow-2xl drop-shadow rounded-3xl px-10 py-5">
@@ -22,7 +23,7 @@ function SelectDate({setDateModal,setDurationModal}) {
 
           <div className="flex flex-col justify-start items-start ">
             <label className="text-lg font-bold" htmlFor="start" >Enter Start date</label>
-            <input
+            <input onChange={(e) => setStartDate(e.target.value)}
               type="date"
               name="start"
               className="border-[1px] border-[#B4B4B4] w-[100%] rounded-lg p-2 mt-5"
@@ -30,6 +31,7 @@ function SelectDate({setDateModal,setDurationModal}) {
             <br />
             <label className="text-lg font-bold">Enter End date</label>
             <input
+              onChange={e => setEndDate(e.target.value)}
               type="date"
               className="border-[1px] border-[#B4B4B4] w-[100%] rounded-lg p-2 mt-5"
             />
@@ -38,6 +40,13 @@ function SelectDate({setDateModal,setDurationModal}) {
               style={{
                 background:
                   "linear-gradient(180deg, #212121 0%, rgba(33, 33, 33, 0.66) 100%)",
+              }}
+              onClick={()=>{
+                if(startDate > endDate || !startDate || !endDate){
+                  toast.warning("Enter a valid date");
+                  return
+                }
+                formHandler();
               }}
             >
               Submit

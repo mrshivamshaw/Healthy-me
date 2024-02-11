@@ -10,7 +10,7 @@ import ChallengeModal from "./challengeModal/ChallengeModal";
 function ChallangesOverview() {
 	const [challengeModal,setChallengeModal] = useState(false)
 	useEffect(()=>{
-		console.log('challenges');
+		// console.log('challenges');
 	},[challengeModal])
 
 	return (
