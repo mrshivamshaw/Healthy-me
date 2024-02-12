@@ -3,8 +3,10 @@ import topSvg from "../../../assets/Group 29 (1).png";
 import downSvg from "../../../assets/Group 27 (1).png";
 import Rewards from "./Rewards.jsx";
 import Footer from "../../Footer/Footer.jsx";
+import axios from "axios";
 
 function RewardsPage() {
+
   return (
     <div className="max-w-[100vw] mt-[15vh] md:mt-[15vh] lg:mt-[15vh] xl:mt-[10vh] overflow-x-hidden relative">
       <img

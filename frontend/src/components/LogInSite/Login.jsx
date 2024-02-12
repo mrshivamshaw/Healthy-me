@@ -29,7 +29,6 @@ const Login = () => {
             navigate("/");
             toast.success(res.data.message);
             localStorage.setItem("userId",res.data.user._id)
-            localStorage.setItem("points",res.data.user.totalPoint)
             storeInLs(res.data.token)
             getFromLs() 
 
