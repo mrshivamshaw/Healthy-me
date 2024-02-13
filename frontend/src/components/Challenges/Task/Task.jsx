@@ -46,7 +46,7 @@ const Task = ({ setChallengeModal, challengeModal }) => {
   };
 
   return (
-    <div className="min-w-[25vw] h-[46vh] p-4 z-30 bg-white shadow-lg rounded-2xl flex flex-col justify-between items-center">
+    <div className="min-w-[25vw] h-auto p-4 z-30 bg-white shadow-lg rounded-2xl flex flex-col justify-between items-center">
       <div className="w-full">
         <div className="flex justify-between items-center w-full">
           <h1 className="text-xl font-bold tracking-wide">TASKS</h1>

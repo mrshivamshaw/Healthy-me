@@ -8,7 +8,7 @@ import Rewards from "./Rewards.jsx";
 function RewardsPage() {
 
 	return (
-		<div className="w-[100vw] mt-[15vh] md:mt-[15vh] lg:mt-[15vh] xl:mt-[10vh] overflow-hidden relative">
+		<div className="max-w-[100vw] mt-[15vh] md:mt-[15vh] lg:mt-[15vh] xl:mt-[10vh] overflow-x-hidden relative">
 			<img src={topSvg} alt="top" className="absolute h-[40vh] bottom-0 z-0"/>
 			<img src={downSvg} alt="down" className="absolute right-0 h-[40vh] z-[0]"/>
 			<div className="w-[85vw] mx-auto ">

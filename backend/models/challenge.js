@@ -14,6 +14,10 @@ const challengeSchema = new mongoose.Schema({
         default:Date.now(),
         
     },
+    duration:{
+        type:Number,
+        required:true
+    },
     endDate:{ 
         type:Date,
         default:Date.now(),
