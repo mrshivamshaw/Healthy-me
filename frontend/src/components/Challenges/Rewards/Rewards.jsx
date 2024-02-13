@@ -40,7 +40,7 @@ function Rewards() {
   }, [rewardsId]);
 
   return (
-    <div className="flex flex-wrap justify-center  gap-x-14 gap-y-10 min-h-[67vh]">
+    <div className="flex flex-wrap justify-center  gap-x-14 gap-y-10 min-h-[67vh] h-full">
       {rewards.map((reward) => (
         <div
           key={reward.index}
