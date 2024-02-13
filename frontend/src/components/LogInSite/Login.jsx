@@ -28,14 +28,11 @@ const Login = () => {
           if (res.data.success === true) {
             navigate("/");
             toast.success(res.data.message);
-            console.log(res.data.token);
-            console.log(res.data.user);
             localStorage.setItem("userId",res.data.user._id)
             storeInLs(res.data.token)
             getFromLs() 
 
           } else {
-            console.log(res.data.message);
             toast.error(res.data.message);
           }
         });
