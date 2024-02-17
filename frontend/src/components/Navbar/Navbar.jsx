@@ -4,8 +4,30 @@ import logo from "../../assets/healthyme.png";
 import { FaBars, FaTimes } from "react-icons/fa";
 import MobileSize from "./MobileSize";
 import { useAuth } from "../../contextApi/ContextApi";
+import { GoogleLogout } from "react-google-login";
+import { gapi } from "gapi-script";
+
+const clientId = "544386339743-9vsphcfv26ubqhvbv34kepfa3r64uap4.apps.googleusercontent.com";
+
 
 const Navbar = () => {
+
+  const onSuccess = () => {
+    console.log("Logout sucessfull");
+  }
+
+  useEffect(() => {
+    function start() {
+      gapi.client.init({
+        clientId : clientId ,
+        scope : ""
+      })
+    };
+    gapi.load('client:auth2' , start);
+  })
+
+
+
   const navigate = useNavigate()
   const {isLoggedIn,setIsLoggedIn,checkAuth} = useAuth()
   const [navActive,SetNavActive] = useState(false)
@@ -56,6 +78,19 @@ const Navbar = () => {
               Rewards
             </li>
           </NavLink>
+
+          {/* Google Logout */}
+
+          <div id="signOutButton">
+            <GoogleLogout
+              clientId={clientId}
+              buttonText="Sign Out"
+              onLogoutSuccess={onSuccess}
+            />
+          </div>
+
+
+
           {!isLoggedIn && <NavLink to={"/login"}>
              <li className="text-[#404040] cursor-pointer text-[17.38px] leading-[34.27px] font-[500]">
               <button
