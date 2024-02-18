@@ -3,14 +3,14 @@ import { login, signin } from '../controllers/auth.js';
 import handelChallenge from '../controllers/challenge.js';
 import fetchUserChallenges from '../controllers/getUserChallenges.js';
 import { updateChallenge } from '../controllers/challengeComplete.js';
-// import multer from 'multer';
 import user from '../models/user.js';
 // import clinicController from '../controllers/clinic.js';
 import { checkAuth } from '../middllewares/auth.js';
+import clinicController from '../controllers/clinic.js';
+import upload from '../middllewares/upload.js';
 
 const router = express.Router();
-// const storage = multer.memoryStorage();
-// const upload = multer({ storage: storage });
+
 
 router.post('/signin', signin);
 router.post('/login', login);
@@ -60,8 +60,8 @@ router.post('/updateReward/:id', async(req,res) =>{
         const userId = req.params.id;
         const data = await user.findByIdAndUpdate(userId, {
             $push: {
-                rewards: req.body.reward
-            }
+                rewards: req.body.rewardId
+            },points : req.body.points
         }, { new: true });
         return res.status(200).json({
             success: true,
@@ -75,6 +75,6 @@ router.post('/updateReward/:id', async(req,res) =>{
     }
 })
 
-// router.post('/clinicDatails', upload.single('file'), clinicController);
+router.post('/clinicDatails/:id', upload.single('file'), clinicController);
 
 export default router;

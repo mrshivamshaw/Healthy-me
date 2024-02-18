@@ -1,68 +1,50 @@
-// import multer from 'multer';
-// import clinic from "../models/clinic.js";
+import multer from 'multer';
+import clinic from "../models/clinic.js";
+import user from '../models/user.js';
 
-// const storage = multer.memoryStorage();
-// const upload = multer({ storage: storage });
+const storage = multer.memoryStorage();
+const upload = multer({ storage: storage });
 
-// const clinicController = async (req, res) => {
-//     try {
-//         console.log(req.body);
-//         console.log(req.file);
+const clinicController = async (req, res) => {
+    try {
 
-//         const { clinicName, address, contactNumber, email } = req.body;
+        const { clinicName, address, contactNumber, email } = req.body;
+        const id = req.params.id
+        if (!clinicName || !address || !contactNumber || !email) {
+            return res.status(403).json({
+                success: false,
+                message: "Please fill all the required fields"
+            });
+        }
 
-//         if (!clinicName || !address || !contactNumber || !email) {
-//             return res.status(403).json({
-//                 success: false,
-//                 message: "Please fill all the required fields"
-//             });
-//         }
+        console.log(req.file);
+        const data = await clinic.create({
+            clinicName: clinicName,
+            address: address,
+            contactNumber: contactNumber,
+            email: email,
+            clinicData: req.file.path
+        });
 
-//         // Wrap the multer middleware in a promise to properly handle async operations
-//         const uploadPromise = new Promise((resolve, reject) => {
-//             upload.single('file')(req, res, function (err) {
-//                 if (err instanceof multer.MulterError) {
-//                     reject({
-//                         success: false,
-//                         message: "Error uploading file",
-//                         error: err
-//                     });
-//                 } else if (err) {
-//                     reject({
-//                         success: false,
-//                         message: "Unknown error uploading file",
-//                         error: err
-//                     });
-//                 } else {
-//                     resolve();
-//                 }
-//             });
-//         });
+        const update = await user.findByIdAndUpdate(id,{
+            clinic:data.id
+        },{new:true})
 
-//         await uploadPromise;
+        return res.status(200).json({
+            success: true,
+            message: "Clinic created successfully",
+            data: data,
+            user: update
+        });
 
-//         const data = await clinic.create({
-//             clinicName: clinicName,
-//             address: address,
-//             contactNumber: contactNumber,
-//             email: email,
-//             clinicData: req.file ? req.file.buffer : Buffer.from([])  // Check if req.file exists
-//         });
+    } catch (error) {
+        console.error(error.message);
+        return res.status(500).json({
+            success: false,
+            message: "Internal Server Error",
+            error: error
+        });
+    }
+};
 
-//         return res.status(200).json({
-//             success: true,
-//             message: "Clinic created successfully",
-//             data: data
-//         });
-
-//     } catch (error) {
-//         console.error(error.message);
-//         return res.status(500).json({
-//             success: false,
-//             message: "Internal Server Error",
-//             error: error
-//         });
-//     }
-// };
-
-// export default clinicController;
+export default clinicController;

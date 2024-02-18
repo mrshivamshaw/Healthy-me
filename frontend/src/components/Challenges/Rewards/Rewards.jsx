@@ -6,13 +6,13 @@ import { toast } from "react-toastify";
 function Rewards() {
   const [rewardsId, setRewardsId] = useState([]);
 
-  const updateRewardsId = async(id) => {
+  const updateRewardsId = async(id,points) => {
     try {
       const update = await axios.post(
         `https://healthy-me-3en2.onrender.com/api/v1/updateReward/${localStorage.getItem(
           "userId"
         )}`,
-        { reward: id }
+        { rewardId: id, points : localStorage.getItem("points") - points }
       ).then((res) => {
         console.log(res);
         setRewardsId(prev => [...prev,id])
@@ -79,7 +79,7 @@ function Rewards() {
               </div>
             ) : localStorage.getItem("points") >= reward.points ? (
               <button
-                onClick={() => updateRewardsId(reward.id)}
+                onClick={() => updateRewardsId(reward.id,reward.points)}
                 className="flex justify-between items-center mt-5 bg-indigo-500 p-2 px-4 rounded-3xl self-end"
               >
                 <strong className="text-white">{reward.points}</strong>
