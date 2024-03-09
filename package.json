@@ -1,6 +1,8 @@
 {
   "dependencies": {
     "bcrypt": "^5.1.1",
-    "react-calendar": "^4.8.0"
+    "gapi-script": "^1.2.0",
+    "react-calendar": "^4.8.0",
+    "react-google-login": "^5.2.2"
   }
 }

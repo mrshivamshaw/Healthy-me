@@ -2,14 +2,40 @@ import React from "react";
 import cardiologist from "../../assets/Cardiologist.gif";
 import { Link, useNavigate } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
-import { useState } from "react";
+import { useState , useEffect } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useAuth } from "../../contextApi/ContextApi";
+import {GoogleLogin} from 'react-google-login'
+import { gapi } from "gapi-script";
 
+const clientId = "544386339743-9vsphcfv26ubqhvbv34kepfa3r64uap4.apps.googleusercontent.com";
 
 const Login = () => {
+
+  const onSuccess = (res) => {
+    console.log('Login Success: currentUser:', res.profileObj);
+    storeInLs(res.profileObj)
+    getFromLs()
+  }
+
+  const onFailure = (res) => {
+    console.log('Login failed: res:', res);
+  }
+
+  useEffect(() => {
+    function start() {
+      gapi.client.init({
+        clientId : clientId ,
+        scope : ""
+      })
+    };
+    gapi.load('client:auth2' , start);
+  })
+
+
+
   const {storeInLs,getFromLs} = useAuth();
   const navigate = useNavigate();
   const [password, setPassword] = useState("");
@@ -106,6 +132,19 @@ const Login = () => {
               </p>
             </form>
           </div>
+        </div>
+
+      {/* Google Login */}
+
+        <div id="signInButton">
+          <GoogleLogin
+            clientId={clientId}
+            buttonText="Login"
+            onSuccess={onSuccess}
+            onFailure={onFailure}
+            cookiePolicy={"single_host_origin"}
+            isSignedIn={true}
+          />
         </div>
       </div>
     </>

@@ -33,7 +33,7 @@ function RewardsPage() {
               Get your Rewards
             </h2>
           </div>
-          <div className="flex flex-wrap justify-center items-center w-full h-full  z-10">
+          <div className="flex flex-wrap justify-center items-center w-full h-full z-10">
             {/* Rewards */}
             <Rewards />
           </div>
