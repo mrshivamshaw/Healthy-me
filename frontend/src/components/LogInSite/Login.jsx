@@ -131,12 +131,9 @@ const Login = () => {
                 </Link>
               </p>
             </form>
-          </div>
-        </div>
-
       {/* Google Login */}
 
-        <div id="signInButton">
+        {/* <div id="signInButton " className="w-full flex justify-center items-center mt-4">
           <GoogleLogin
             clientId={clientId}
             buttonText="Login"
@@ -145,7 +142,10 @@ const Login = () => {
             cookiePolicy={"single_host_origin"}
             isSignedIn={true}
           />
-        </div>
+        </div> */}
+          </div>
+        </div>  
+
       </div>
     </>
   );

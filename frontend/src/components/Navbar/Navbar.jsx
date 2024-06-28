@@ -81,13 +81,13 @@ const Navbar = () => {
 
           {/* Google Logout */}
 
-          <div id="signOutButton">
+          {/* <div id="signOutButton">
             <GoogleLogout
               clientId={clientId}
               buttonText="Sign Out"
               onLogoutSuccess={onSuccess}
             />
-          </div>
+          </div> */}
 
 
 
